@@ -1,0 +1,170 @@
+<svg viewBox="0 0 1200 500" xmlns="http://www.w3.org/2000/svg">
+  <!-- Definición de gradientes y colores -->
+  <defs>
+    <!-- Gradiente de fondo en tonos grises -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f5f7fa;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e5e9f0;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Gradiente naranja principal -->
+    <linearGradient id="orangeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff7b25;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ff5714;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Gradiente gris para elementos secundarios -->
+    <linearGradient id="greyGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#b0b8c0;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7f8c8d;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Gradiente para monitor -->
+    <linearGradient id="monitorGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#34495e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2c3e50;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Fondo -->
+  <rect width="1200" height="500" fill="url(#bgGradient)" />
+  
+  <!-- Patrón decorativo de fondo -->
+  <path d="M0,0 L50,0 L50,50 L0,50 Z" fill="url(#greyGradient)" opacity="0.03" />
+  <path d="M100,0 L150,0 L150,50 L100,50 Z" fill="url(#greyGradient)" opacity="0.03" />
+  <path d="M200,0 L250,0 L250,50 L200,50 Z" fill="url(#greyGradient)" opacity="0.03" />
+  <path d="M300,0 L350,0 L350,50 L300,50 Z" fill="url(#greyGradient)" opacity="0.03" />
+  <path d="M400,0 L450,0 L450,50 L400,50 Z" fill="url(#greyGradient)" opacity="0.03" />
+  
+  <path d="M50,50 L100,50 L100,100 L50,100 Z" fill="url(#greyGradient)" opacity="0.03" />
+  <path d="M150,50 L200,50 L200,100 L150,100 Z" fill="url(#greyGradient)" opacity="0.03" />
+  <path d="M250,50 L300,50 L300,100 L250,100 Z" fill="url(#greyGradient)" opacity="0.03" />
+  <path d="M350,50 L400,50 L400,100 L350,100 Z" fill="url(#greyGradient)" opacity="0.03" />
+  <path d="M450,50 L500,50 L500,100 L450,100 Z" fill="url(#greyGradient)" opacity="0.03" />
+  
+  <!-- Monitor central -->
+  <g transform="translate(600, 250)">
+    <!-- Base del monitor -->
+    <path d="M-40,150 L40,150 L20,200 L-20,200 Z" fill="url(#monitorGradient)" />
+    <rect x="-120" y="-20" width="240" height="170" rx="10" fill="url(#monitorGradient)" />
+    
+    <!-- Pantalla -->
+    <rect x="-110" y="-10" width="220" height="150" rx="5" fill="#fff" />
+    
+    <!-- Contenido web en la pantalla -->
+    <rect x="-100" y="-5" width="200" height="25" rx="3" fill="#f8f9fa" />
+    <circle cx="-85" cy="8" r="5" fill="#ff5714" />
+    <circle cx="-70" cy="8" r="5" fill="#ffc107" />
+    <circle cx="-55" cy="8" r="5" fill="#4caf50" />
+    <rect x="-25" y="3" width="115" height="10" rx="2" fill="#e9ecef" />
+    
+    <!-- Barra lateral -->
+    <rect x="-100" y="25" width="40" height="110" rx="3" fill="#f8f9fa" />
+    <rect x="-90" y="35" width="20" height="5" rx="1" fill="url(#orangeGradient)" opacity="0.8" />
+    <rect x="-90" y="50" width="20" height="5" rx="1" fill="url(#greyGradient)" opacity="0.8" />
+    <rect x="-90" y="65" width="20" height="5" rx="1" fill="url(#greyGradient)" opacity="0.8" />
+    <rect x="-90" y="80" width="20" height="5" rx="1" fill="url(#greyGradient)" opacity="0.8" />
+    <rect x="-90" y="95" width="20" height="5" rx="1" fill="url(#greyGradient)" opacity="0.8" />
+    
+    <!-- Contenido principal -->
+    <rect x="-50" y="35" width="130" height="30" rx="3" fill="url(#orangeGradient)" opacity="0.2" />
+    <rect x="-50" y="45" width="90" height="10" rx="2" fill="url(#orangeGradient)" opacity="0.8" />
+    
+    <rect x="-50" y="75" width="130" height="50" rx="3" fill="#f8f9fa" />
+    <rect x="-40" y="85" width="50" height="30" rx="2" fill="url(#greyGradient)" opacity="0.3" />
+    <rect x="20" y="85" width="50" height="30" rx="2" fill="url(#greyGradient)" opacity="0.3" />
+    
+    <rect x="-50" y="135" width="60" height="10" rx="5" fill="url(#orangeGradient)" opacity="0.8" />
+  </g>
+  
+  <!-- Elementos de desarrollo web alrededor -->
+  
+  <!-- Código HTML -->
+  <g transform="translate(400, 150)">
+    <rect x="-60" y="-40" width="120" height="80" rx="5" fill="url(#greyGradient)" opacity="0.2" />
+    <path d="M-30,-10 L-10,10 L-30,30" stroke="#ff5714" stroke-width="3" fill="none" />
+    <path d="M30,-10 L10,10 L30,30" stroke="#ff5714" stroke-width="3" fill="none" />
+  </g>
+  
+  <!-- CSS -->
+  <g transform="translate(350, 300)">
+    <rect x="-40" y="-40" width="80" height="80" rx="5" fill="url(#greyGradient)" opacity="0.2" />
+    <text x="0" y="0" font-family="monospace" font-size="16" font-weight="bold" text-anchor="middle" fill="#ff5714">{}</text>
+    <rect x="-20" y="10" width="40" height="5" rx="2" fill="url(#orangeGradient)" />
+    <rect x="-20" y="20" width="30" height="5" rx="2" fill="url(#orangeGradient)" />
+  </g>
+  
+  <!-- JavaScript -->
+  <g transform="translate(850, 150)">
+    <rect x="-40" y="-40" width="80" height="80" rx="5" fill="url(#greyGradient)" opacity="0.2" />
+    <circle cx="0" cy="0" r="20" fill="url(#orangeGradient)" opacity="0.8" />
+    <text x="0" y="5" font-family="monospace" font-size="16" font-weight="bold" text-anchor="middle" fill="#fff">JS</text>
+  </g>
+  
+  <!-- Diseño Responsivo -->
+  <g transform="translate(825, 300)">
+    <rect x="-50" y="-40" width="100" height="80" rx="5" fill="url(#greyGradient)" opacity="0.2" />
+    <!-- Laptop -->
+    <rect x="-30" y="-20" width="40" height="25" rx="2" fill="#34495e" />
+    <rect x="-28" y="-18" width="36" height="21" rx="1" fill="#f8f9fa" />
+    <rect x="-20" y="5" width="20" height="2" rx="1" fill="#34495e" />
+    <!-- Móvil -->
+    <rect x="20" y="-15" width="12" height="20" rx="2" fill="#34495e" />
+    <rect x="21" y="-13" width="10" height="16" rx="1" fill="#f8f9fa" />
+    <circle cx="26" cy="5" r="1" fill="#34495e" />
+  </g>
+  
+  <!-- Base de datos -->
+  <g transform="translate(500, 400)">
+    <rect x="-40" y="-40" width="80" height="80" rx="5" fill="url(#greyGradient)" opacity="0.2" />
+    <path d="M-20,-15 C-20,-25 20,-25 20,-15 L20,15 C20,25 -20,25 -20,15 Z" fill="url(#monitorGradient)" />
+    <path d="M-20,-15 C-20,-5 20,-5 20,-15" fill="none" stroke="#fff" stroke-width="1" />
+    <path d="M-20,0 C-20,10 20,10 20,0" fill="none" stroke="#fff" stroke-width="1" />
+  </g>
+  
+  <!-- Gráficos/UI -->
+  <g transform="translate(700, 400)">
+    <rect x="-40" y="-40" width="80" height="80" rx="5" fill="url(#greyGradient)" opacity="0.2" />
+    <rect x="-20" y="-20" width="40" height="10" rx="2" fill="url(#orangeGradient)" />
+    <rect x="-20" y="-5" width="30" height="10" rx="2" fill="url(#orangeGradient)" opacity="0.8" />
+    <rect x="-20" y="10" width="20" height="10" rx="2" fill="url(#orangeGradient)" opacity="0.6" />
+  </g>
+  
+  <!-- Nube/Hosting -->
+  <g transform="translate(600, 100)">
+    <rect x="-50" y="-40" width="100" height="80" rx="5" fill="url(#greyGradient)" opacity="0.2" />
+    <path d="M0,-20 C-15,-20 -25,-10 -25,0 C-25,5 -20,10 -15,10 C-15,20 -5,25 5,25 C15,25 25,20 25,10 C30,10 35,5 35,0 C35,-10 25,-20 15,-20 C10,-25 5,-25 0,-20 Z" fill="url(#greyGradient)" opacity="0.8" />
+  </g>
+  
+  <!-- Conexiones entre elementos -->
+  <g stroke="url(#greyGradient)" stroke-width="2" stroke-dasharray="5,5" fill="none">
+    <path d="M400,150 L600,150" />
+    <path d="M600,150 L800,150" />
+    <path d="M350,300 L500,250" />
+    <path d="M700,250 L825,300" />
+    <path d="M500,400 L600,350" />
+    <path d="M600,350 L700,400" />
+  </g>
+  
+  <!-- Líneas de conexión sólidas al monitor -->
+  <g stroke="url(#orangeGradient)" stroke-width="2" fill="none">
+    <path d="M600,150 L600,225" />
+    <path d="M500,250 L500,400" />
+    <path d="M700,250 L700,400" />
+  </g>
+  
+  <!-- Engranajes que representan el funcionamiento -->
+  <g transform="translate(930, 370)">
+    <path d="M0,-20 L5,-19 L7,-12 L12,-14 L15,-8 L10,-5 L12,0 L10,5 L15,8 L12,14 L7,12 L5,19 L0,20 L-5,19 L-7,12 L-12,14 L-15,8 L-10,5 L-12,0 L-10,-5 L-15,-8 L-12,-14 L-7,-12 L-5,-19 Z" fill="url(#greyGradient)" opacity="0.8">
+      <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="30s" repeatCount="indefinite" />
+    </path>
+    <circle cx="0" cy="0" r="5" fill="url(#orangeGradient)" />
+  </g>
+  
+  <g transform="translate(270, 370)">
+    <path d="M0,-15 L3,-14 L5,-9 L9,-10 L11,-6 L7,-3 L9,0 L7,3 L11,6 L9,10 L5,9 L3,14 L0,15 L-3,14 L-5,9 L-9,10 L-11,6 L-7,3 L-9,0 L-7,-3 L-11,-6 L-9,-10 L-5,-9 L-3,-14 Z" fill="url(#greyGradient)" opacity="0.8">
+      <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="-360 0 0" dur="25s" repeatCount="indefinite" />
+    </path>
+    <circle cx="0" cy="0" r="4" fill="url(#orangeGradient)" />
+  </g>
+</svg>

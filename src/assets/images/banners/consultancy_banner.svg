@@ -1,0 +1,169 @@
+<svg viewBox="0 0 1200 500" xmlns="http://www.w3.org/2000/svg">
+  <!-- Definición de gradientes y colores -->
+  <defs>
+    <!-- Gradiente de fondo en tonos grises -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f5f7fa;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e5e9f0;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Gradiente naranja principal -->
+    <linearGradient id="orangeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff7b25;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ff5714;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Gradiente gris para elementos secundarios -->
+    <linearGradient id="greyGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#b0b8c0;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7f8c8d;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Gradiente para elementos oscuros -->
+    <linearGradient id="darkGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#34495e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2c3e50;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Fondo -->
+  <rect width="1200" height="500" fill="url(#bgGradient)" />
+  
+  <!-- Patrón de círculos para el fondo -->
+  <circle cx="100" cy="100" r="5" fill="url(#greyGradient)" opacity="0.1" />
+  <circle cx="300" cy="150" r="5" fill="url(#greyGradient)" opacity="0.1" />
+  <circle cx="200" cy="350" r="5" fill="url(#greyGradient)" opacity="0.1" />
+  <circle cx="400" cy="400" r="5" fill="url(#greyGradient)" opacity="0.1" />
+  <circle cx="800" cy="100" r="5" fill="url(#greyGradient)" opacity="0.1" />
+  <circle cx="1000" cy="150" r="5" fill="url(#greyGradient)" opacity="0.1" />
+  <circle cx="900" cy="350" r="5" fill="url(#greyGradient)" opacity="0.1" />
+  <circle cx="1100" cy="400" r="5" fill="url(#greyGradient)" opacity="0.1" />
+  
+  <!-- Líneas conectoras de fondo -->
+  <path d="M100,100 L300,150 L200,350 L400,400" stroke="url(#greyGradient)" stroke-width="1" opacity="0.1" fill="none" />
+  <path d="M800,100 L1000,150 L900,350 L1100,400" stroke="url(#greyGradient)" stroke-width="1" opacity="0.1" fill="none" />
+  <path d="M100,100 L800,100" stroke="url(#greyGradient)" stroke-width="1" opacity="0.1" fill="none" />
+  <path d="M300,150 L1000,150" stroke="url(#greyGradient)" stroke-width="1" opacity="0.1" fill="none" />
+  <path d="M200,350 L900,350" stroke="url(#greyGradient)" stroke-width="1" opacity="0.1" fill="none" />
+  <path d="M400,400 L1100,400" stroke="url(#greyGradient)" stroke-width="1" opacity="0.1" fill="none" />
+  
+  <!-- Elemento central: Personas consultando -->
+  <g transform="translate(600, 250)">
+    <!-- Mesa de reuniones -->
+    <ellipse cx="0" cy="50" rx="150" ry="40" fill="url(#darkGradient)" opacity="0.8" />
+    <ellipse cx="0" cy="50" rx="130" ry="30" fill="#2c3e50" opacity="0.6" />
+    
+    <!-- Persona 1: Consultor -->
+    <g transform="translate(-70, -20)">
+      <!-- Cabeza -->
+      <circle cx="0" cy="0" r="20" fill="url(#orangeGradient)" />
+      <!-- Cuerpo -->
+      <path d="M0,20 L0,70 M-20,40 L20,40" stroke="url(#orangeGradient)" stroke-width="5" stroke-linecap="round" />
+      <!-- Brazos apuntando -->
+      <path d="M-20,40 L-50,15" stroke="url(#orangeGradient)" stroke-width="4" stroke-linecap="round" />
+      <path d="M20,40 L40,30" stroke="url(#orangeGradient)" stroke-width="4" stroke-linecap="round" />
+    </g>
+    
+    <!-- Persona 2: Cliente -->
+    <g transform="translate(70, -20)">
+      <!-- Cabeza --> 
+      <circle cx="0" cy="0" r="20" fill="url(#greyGradient)" />
+      <!-- Cuerpo -->
+      <path d="M0,20 L0,70 M-20,40 L20,40" stroke="url(#greyGradient)" stroke-width="5" stroke-linecap="round" />
+      <!-- Brazos -->
+      <path d="M-20,40 L-40,30" stroke="url(#greyGradient)" stroke-width="4" stroke-linecap="round" />
+      <path d="M20,40 L35,50" stroke="url(#greyGradient)" stroke-width="4" stroke-linecap="round" />
+    </g>
+    
+    <!-- Tablet/Pantalla en la mesa -->
+    <rect x="-40" y="30" width="80" height="50" rx="5" fill="#fff" stroke="url(#greyGradient)" stroke-width="2" />
+    <rect x="-30" y="40" width="60" height="10" rx="2" fill="url(#orangeGradient)" opacity="0.7" />
+    <rect x="-30" y="55" width="40" height="5" rx="2" fill="url(#greyGradient)" opacity="0.5" />
+    <rect x="-30" y="65" width="30" height="5" rx="2" fill="url(#greyGradient)" opacity="0.5" />
+  </g>
+  
+  <!-- Elementos conceptuales alrededor -->
+  
+  <!-- Lupa / Análisis -->
+  <g transform="translate(350, 150)">
+    <circle cx="0" cy="0" r="40" fill="url(#greyGradient)" opacity="0.1" />
+    <circle cx="0" cy="0" r="30" fill="none" stroke="url(#greyGradient)" stroke-width="5" />
+    <path d="M25,25 L45,45" stroke="url(#greyGradient)" stroke-width="8" stroke-linecap="round" />
+    <circle cx="0" cy="0" r="8" fill="url(#orangeGradient)" />
+  </g>
+  
+  <!-- Bombilla / Ideas -->
+  <g transform="translate(850, 150)">
+    <circle cx="0" cy="0" r="40" fill="url(#greyGradient)" opacity="0.1" />
+    <path d="M0,-25 C-15,-25 -25,-15 -25,0 C-25,10 -20,20 -10,25 C-10,25 -5,30 -5,35 C-5,35 5,35 5,35 C5,30 10,25 10,25 C20,20 25,10 25,0 C25,-15 15,-25 0,-25 Z" fill="url(#orangeGradient)" />
+    <rect x="-5" y="35" width="10" height="5" rx="2" fill="url(#greyGradient)" />
+  </g>
+  
+  <!-- Diagrama / Estrategia -->
+  <g transform="translate(400, 350)">
+    <circle cx="0" cy="0" r="40" fill="url(#greyGradient)" opacity="0.1" />
+    <rect x="-25" y="-25" width="50" height="50" rx="5" fill="#fff" stroke="url(#greyGradient)" stroke-width="2" />
+    <path d="M-15,-15 L-15,15 L15,15" stroke="url(#orangeGradient)" stroke-width="2" fill="none" />
+    <circle cx="-15" cy="-5" r="5" fill="url(#orangeGradient)" />
+    <circle cx="0" cy="5" r="5" fill="url(#orangeGradient)" />
+    <circle cx="15" cy="-10" r="5" fill="url(#orangeGradient)" />
+  </g>
+  
+  <!-- Gráfico de optimización -->
+  <g transform="translate(800, 350)">
+    <circle cx="0" cy="0" r="40" fill="url(#greyGradient)" opacity="0.1" />
+    <rect x="-25" y="-25" width="50" height="50" rx="5" fill="#fff" stroke="url(#greyGradient)" stroke-width="2" />
+    <path d="M-20,15 L-10,0 L0,10 L10,-5 L20,-15" stroke="url(#orangeGradient)" stroke-width="3" fill="none" />
+    <circle cx="-20" cy="15" r="3" fill="url(#orangeGradient)" />
+    <circle cx="-10" cy="0" r="3" fill="url(#orangeGradient)" />
+    <circle cx="0" cy="10" r="3" fill="url(#orangeGradient)" />
+    <circle cx="10" cy="-5" r="3" fill="url(#orangeGradient)" />
+    <circle cx="20" cy="-15" r="3" fill="url(#orangeGradient)" />
+  </g>
+  
+  <!-- Engranajes / Optimización -->
+  <g transform="translate(200, 250)">
+    <circle cx="0" cy="0" r="40" fill="url(#greyGradient)" opacity="0.1" />
+    <path d="M0,-30 L5,-28 L10,-20 L18,-22 L22,-15 L15,-10 L18,0 L15,10 L22,15 L18,22 L10,20 L5,28 L0,30 L-5,28 L-10,20 L-18,22 L-22,15 L-15,10 L-18,0 L-15,-10 L-22,-15 L-18,-22 L-10,-20 L-5,-28 Z" fill="url(#greyGradient)" opacity="0.7">
+      <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="30s" repeatCount="indefinite" />
+    </path>
+    <circle cx="0" cy="0" r="10" fill="url(#orangeGradient)" />
+  </g>
+  
+  <!-- Documento/Informe -->
+  <g transform="translate(1000, 250)">
+    <circle cx="0" cy="0" r="40" fill="url(#greyGradient)" opacity="0.1" />
+    <path d="M-20,-30 L10,-30 L20,-20 L20,30 L-20,30 Z" fill="#fff" stroke="url(#greyGradient)" stroke-width="2" />
+    <path d="M10,-30 L10,-20 L20,-20" fill="none" stroke="url(#greyGradient)" stroke-width="2" />
+    <path d="M-10,-20 L10,-20 M-10,-10 L15,-10 M-10,0 L15,0 M-10,10 L5,10" stroke="url(#orangeGradient)" stroke-width="2" />
+  </g>
+  
+  <!-- Ruta / Progreso -->
+  <g transform="translate(600, 430)">
+    <rect x="-180" y="-20" width="360" height="40" rx="20" fill="url(#greyGradient)" opacity="0.2" />
+    <circle cx="-150" cy="0" r="15" fill="url(#orangeGradient)" />
+    <circle cx="-75" cy="0" r="15" fill="url(#orangeGradient)" opacity="0.8" />
+    <circle cx="0" cy="0" r="15" fill="url(#orangeGradient)" opacity="0.6" />
+    <circle cx="75" cy="0" r="15" fill="url(#greyGradient)" opacity="0.8" />
+    <circle cx="150" cy="0" r="15" fill="url(#greyGradient)" opacity="0.6" />
+    <path d="M-135,0 L-90,0 M-60,0 L-15,0 M15,0 L60,0 M90,0 L135,0" stroke="url(#greyGradient)" stroke-width="3" stroke-dasharray="5,3" />
+  </g>
+  
+  <!-- Conexiones entre elementos -->
+  <g stroke="url(#orangeGradient)" stroke-width="2" stroke-dasharray="5,5" fill="none">
+    <path d="M350,150 L530,230" />
+    <path d="M850,150 L670,230" />
+    <path d="M400,350 L530,270" />
+    <path d="M800,350 L670,270" />
+    <path d="M200,250 L530,250" />
+    <path d="M1000,250 L670,250" />
+  </g>
+  
+  <!-- Elementos decorativos adicionales -->
+  <circle cx="150" cy="100" r="8" fill="url(#orangeGradient)" opacity="0.5" />
+  <circle cx="250" cy="150" r="6" fill="url(#orangeGradient)" opacity="0.4" />
+  <circle cx="150" cy="400" r="8" fill="url(#orangeGradient)" opacity="0.5" />
+  <circle cx="950" cy="100" r="8" fill="url(#orangeGradient)" opacity="0.5" />
+  <circle cx="1050" cy="150" r="6" fill="url(#orangeGradient)" opacity="0.4" />
+  <circle cx="950" cy="400" r="8" fill="url(#orangeGradient)" opacity="0.5" />
+</svg>

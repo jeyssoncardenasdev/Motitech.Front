@@ -1,0 +1,151 @@
+
+.navbar {
+  width: 100%;
+  background-color: #1a1a1a;
+  padding: 20px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.logo {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.logo a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.9rem;
+  font-weight: normal;
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: normal;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  transition: color 0.3s;
+}
+
+.nav-links a.active {
+  color: orange;
+}
+
+.nav-links a:hover {
+  color: orange;
+}
+
+/* src/styles.css o donde guardes tus estilos */
+.nav-item {
+  padding: 10px;
+  text-decoration: none;
+  color: black; /* Color por defecto */
+}
+
+.nav-item.active {
+  color: yellow; /* Cambia el color cuando el enlace esté activo */
+  font-weight: normal; /* Puedes añadir otros estilos como negrita */
+}
+
+
+/* Menu Hamburger */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.bar {
+  width: 30px;
+  height: 4px;
+  background-color: #fff;
+  border-radius: 2px;
+}
+
+/* Checkbox y Label para manejar el toggle del menú */
+.menu-toggle-checkbox {
+  display: none;
+}
+
+.menu-toggle-checkbox:checked + .menu-toggle + .nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  margin-top: 15px;
+}
+
+/* Media Queries for responsiveness */
+@media screen and (max-width: 1064px) {
+  .navbar {
+    width: 100%;
+    background-color: #1a1a1a;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  }
+
+  .nav-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .logo {
+    position: static;
+    transform: none;
+    margin-left: 20px;
+  }
+
+  .nav-links {
+    display: none;
+    width: 100%;
+    padding-left: 0;
+  }
+
+  .menu-toggle {
+    display: flex;
+    position: absolute;
+    top: 5px;
+    right: 20px;
+    transform: none;
+    margin-top: -35px;
+  }
+
+  .nav-links a {
+    font-size: 1rem;
+    padding: 10px 0;
+    width: 100%;
+    text-align: left;
+  }
+
+  .menu-toggle-checkbox:checked + .menu-toggle + .nav-links {
+    display: flex;
+    flex-direction: column;
+  }
+}
