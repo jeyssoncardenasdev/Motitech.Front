@@ -22,7 +22,7 @@ const Socials = () => (
           LinkedIn
         </a>
         <a
-          href="https://github.com/jeyssoncardenas"
+          href="https://github.com/jeyssoncardenasdev"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-2 text-white hover:text-orange-400 transition"

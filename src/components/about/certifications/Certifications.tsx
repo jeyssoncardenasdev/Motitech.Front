@@ -93,32 +93,63 @@ const certifications: Certification[] = [
     src: "certificate-dotnet-advance.png",
     url: "",
   },
+  {
+    title: "Scrum Team Member",
+    institution: "International Scrum Institute",
+    date: "29 de Abril, 2023",
+    src: "certificate-scrum-team.png",
+    url: "",
+  },
 ];
 
 const Certifications: React.FC = () => {
+  // Duplicamos la lista para crear efecto infinito
+  const infiniteCerts = [...certifications, ...certifications];
+
   return (
-  <div className="bg-zinc-800 max-w-6xl mx-auto sm:p-10 md:p-10 lg:p-10">
-      <h2 className="text-4xl font-bold text-center mb-10 text-white">
-        Mis Certificaciones
+    <div className="w-full bg-zinc-900 overflow-hidden">
+      <h2 className="text-4xl font-bold text-center p-10 text-white relative before:content-[''] before:absolute before:w-1/4 before:h-px before:bg-gray-300 before:top-1/2 before:left-0 after:content-[''] after:absolute after:w-1/4 after:h-px after:bg-gray-300 after:top-1/2 after:right-0">
+        Certificaciones
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-        {certifications.map((cert, index) => (
-          <div
-            key={index}
-            className="bg-zinc-700 text-gray-200 p-4 shadow-lg hover:scale-105 transition-transform duration-300"
-          >
-            <img
-              src={`src/assets/images/certifications/${cert.src}`}
-              alt={cert.title}
-              className="w-full h-64 object-contain mb-5 mx-auto"
-            />
-            <h3 className="text-lg font-bold">{cert.title}</h3>
-            <p className="text-sm text-gray-200">{cert.institution}</p>
-            <p className="text-sm text-white">{cert.date}</p>
-          </div>
-        ))}
+      <div className="relative w-full">
+        <div
+          className="flex w-max animate-marquee gap-8"
+          style={{
+            animation: "scroll-left 60s linear infinite",
+          }}
+        >
+          {infiniteCerts.map((cert, index) => (
+            <div
+              key={index}
+              className="min-w-[300px] bg-zinc-700 text-gray-200 p-4 shadow-lg hover:scale-105 transition-transform duration-300"
+            >
+              <img
+                src={`src/assets/images/certifications/${cert.src}`}
+                alt={cert.title}
+                className="w-full h-64 object-contain mb-5 mx-auto"
+              />
+              <h3 className="text-lg font-bold">{cert.title}</h3>
+              <p className="text-sm text-gray-200">{cert.institution}</p>
+              <p className="text-sm text-white">{cert.date}</p>
+            </div>
+          ))}
+        </div>
       </div>
-      </div>
+
+      <style>
+        {`
+          @keyframes scroll-left {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+          }
+
+          .animate-marquee {
+            display: flex;
+            width: max-content;
+          }
+        `}
+      </style>
+    </div>
   );
 };
 

@@ -10,7 +10,7 @@ import Terms from "./components/terms/Terms";
 function App() {
   return (
     <Router>
-      <div className="min-h-screen flex flex-col">
+      <div className="font-poppins min-h-screen flex flex-col">
         <NavbarV1 />
         <main className="flex-1">
           <Routes>
