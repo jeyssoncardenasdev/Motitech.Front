@@ -8,12 +8,12 @@ const contentSecurityPolicy = [
   "default-src 'self'",
   "base-uri 'self'",
   "object-src 'none'",
-  "frame-ancestors 'none'",
   "form-action 'none'",
   "script-src 'self'",
   "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
   "font-src 'self' https://fonts.gstatic.com",
-  "img-src 'self'",
+  // data: allows the small SVG logos that Vite inlines into the page.
+  "img-src 'self' data:",
   "connect-src 'self' https://formspree.io",
   "upgrade-insecure-requests",
 ].join("; ");
