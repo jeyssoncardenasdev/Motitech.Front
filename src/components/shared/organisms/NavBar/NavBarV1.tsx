@@ -62,6 +62,12 @@ export default function Navbar() {
             toDark={messages.nav.themeToDark}
             onToggle={() => setTheme(theme === "light" ? "dark" : "light")}
           />
+          <LanguageSwitch
+            locale={locale}
+            label={messages.nav.language}
+            onChange={switchLanguage}
+            className="flex"
+          />
           <button
             type="button"
             className="text-2xl px-2 min-h-11 min-w-11"
@@ -87,12 +93,6 @@ export default function Navbar() {
               {messages.nav[item.key]}
             </NavLink>
           ))}
-          <LanguageSwitch
-            locale={locale}
-            label={messages.nav.language}
-            onChange={switchLanguage}
-            className="flex"
-          />
         </div>
       )}
     </nav>

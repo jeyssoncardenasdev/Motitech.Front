@@ -9,7 +9,7 @@ import {
 import { en } from "./en";
 import { es } from "./es";
 import type { Locale, Messages } from "./types";
-import { parseLocale } from "./locale";
+import { localeFromLanguages, parseLocale } from "./locale";
 
 const STORAGE_KEY = "motitech-locale";
 const dictionaries: Record<Locale, Messages> = { en, es };
@@ -22,13 +22,20 @@ interface LanguageContextValue {
 
 const LanguageContext = createContext<LanguageContextValue | null>(null);
 
+function deviceLanguages(): readonly string[] {
+  if (navigator.languages.length > 0) return navigator.languages;
+  return navigator.language ? [navigator.language] : [];
+}
+
 function readStoredLocale(): Locale {
   const fromQuery = parseLocale(new URLSearchParams(window.location.search).get("lang"));
   if (fromQuery) {
     localStorage.setItem(STORAGE_KEY, fromQuery);
     return fromQuery;
   }
-  return parseLocale(localStorage.getItem(STORAGE_KEY)) ?? "en";
+  const stored = parseLocale(localStorage.getItem(STORAGE_KEY));
+  if (stored) return stored;
+  return localeFromLanguages(deviceLanguages());
 }
 
 export function LanguageProvider({ children }: { children: ReactNode }) {

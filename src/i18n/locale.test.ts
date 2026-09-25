@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { parseLocale } from "./locale";
+import { localeFromLanguageTag, localeFromLanguages, parseLocale } from "./locale";
 
 describe("parseLocale", () => {
   it("accepts only the two supported languages", () => {
@@ -14,5 +14,21 @@ describe("parseLocale", () => {
     expect(parseLocale("javascript:alert(1)")).toBeNull();
     expect(parseLocale("<script>")).toBeNull();
     expect(parseLocale("../en")).toBeNull();
+  });
+});
+
+describe("localeFromLanguages", () => {
+  it("reads the language of a regional tag", () => {
+    expect(localeFromLanguageTag("es-CO")).toBe("es");
+    expect(localeFromLanguageTag("es_MX")).toBe("es");
+    expect(localeFromLanguageTag("EN-us")).toBe("en");
+    expect(localeFromLanguageTag("fr-FR")).toBeNull();
+  });
+
+  it("uses the first supported device language", () => {
+    expect(localeFromLanguages(["fr-FR", "es-CO", "en"])).toBe("es");
+    expect(localeFromLanguages(["en-GB"])).toBe("en");
+    expect(localeFromLanguages(["pt-BR", "de"])).toBe("en");
+    expect(localeFromLanguages([])).toBe("en");
   });
 });

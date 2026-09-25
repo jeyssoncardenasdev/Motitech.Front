@@ -125,4 +125,26 @@ describe("Motitech", () => {
     renderAt("/?lang=es");
     expect(screen.getByRole("heading", { name: "Hola, bienvenido" })).toBeInTheDocument();
   });
+
+  it("follows the device language until the visitor picks one", () => {
+    vi.spyOn(navigator, "languages", "get").mockReturnValue(["es-CO", "en-US"]);
+    try {
+      renderAt("/");
+      expect(screen.getByRole("heading", { name: "Hola, bienvenido" })).toBeInTheDocument();
+      expect(localStorage.getItem("motitech-locale")).toBeNull();
+    } finally {
+      vi.restoreAllMocks();
+    }
+  });
+
+  it("keeps a saved language ahead of the device language", () => {
+    localStorage.setItem("motitech-locale", "en");
+    vi.spyOn(navigator, "languages", "get").mockReturnValue(["es-CO"]);
+    try {
+      renderAt("/");
+      expect(screen.getByRole("heading", { name: "Hello, welcome" })).toBeInTheDocument();
+    } finally {
+      vi.restoreAllMocks();
+    }
+  });
 });
