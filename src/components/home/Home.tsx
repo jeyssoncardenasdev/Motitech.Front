@@ -1,5 +1,6 @@
 import Hero from "./sections/Hero";
 import Technologies from "./sections/Technologies";
+import Methodology from "./sections/Methodology";
 import Services from "./sections/Services";
 import Projects from "./sections/Projects";
 import Contact from "./sections/Contact";
@@ -10,6 +11,7 @@ const Home = () => {
     <div className="bg-zinc-900 text-white min-h-screen">
       <Hero />
       <Technologies />
+      <Methodology />
       <Services />
       <Projects />
       <Contact />

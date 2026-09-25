@@ -1,121 +1,113 @@
-import { useState, useEffect } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import { serviceBanners } from "../../../content/catalog";
+import { useI18n } from "../../../i18n/LanguageProvider";
 
-interface Service {
-  src: string;
-  title: string;
-  description: string;
-}
+export const SERVICE_AUTOPLAY_MS = 5000;
+
+const prefersReducedMotion = () =>
+  window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches ?? false;
 
 const Services = () => {
-  const [currentIndex, setCurrentIndex] = useState<number>(0);
+  const { messages } = useI18n();
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [manualPause, setManualPause] = useState(false);
+  const [held, setHeld] = useState(false);
+  const items = messages.services.items;
+  const current = items[currentIndex];
+  const paused = manualPause || held;
 
-  const services: Service[] = [
-    {
-      src: "develop_web_banner.svg",
-      title: "Desarrollo Web",
-      description:
-        "Creación de sitios web modernos, responsivos y optimizados para SEO.",
-    },
-    {
-      src: "develop_mobile_banner.svg",
-      title: "Desarrollo Móvil",
-      description: "Aplicaciones nativas y multiplataforma para iOS y Android.",
-    },
-    {
-      src: "consultancy_banner.svg",
-      title: "Consultoría Técnica",
-      description:
-        "Asesoramiento experto para optimizar tus soluciones tecnológicas.",
-    },
-    {
-      src: "migration_banner.svg",
-      title: "Migración de Aplicaciones a Nuevas Tecnologías y la Nube",
-      description:
-        "Estrategias para actualizar y trasladar tus aplicaciones a plataformas más modernas y eficientes en la nube.",
-    },
-  ];
+  const go = (index: number) => {
+    setCurrentIndex((index + items.length) % items.length);
+  };
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) =>
-        prevIndex === services.length - 1 ? 0 : prevIndex + 1
-      );
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, [services.length]);
-
-  const nextSlide = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === services.length - 1 ? 0 : prevIndex + 1
-    );
-  };
-
-  const prevSlide = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? services.length - 1 : prevIndex - 1
-    );
-  };
+    if (paused || prefersReducedMotion()) return;
+    const timer = window.setInterval(() => {
+      setCurrentIndex((index) => (index + 1) % items.length);
+    }, SERVICE_AUTOPLAY_MS);
+    return () => window.clearInterval(timer);
+  }, [paused, items.length, currentIndex]);
 
   return (
-    <section id="services" className="py-5 bg-zinc-900">
-      <div className="max-w-7xl mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
-          Te puedo ayudar con:
-        </h2>
-
-        <div className="relative max-w-4xl mx-auto px-4 py-1">
-          <div className="overflow-hidden bg-zinc-700 shadow-lg">
-            <div
-              className="flex transition-transform duration-500 ease-in-out"
-              style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+    <section id="services" className="py-16 bg-zinc-900" aria-roledescription="carousel">
+      <div className="max-w-4xl mx-auto px-4">
+        <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">{messages.services.title}</h2>
+        <div
+          className="bg-zinc-700"
+          onPointerEnter={(event) => {
+            if (event.pointerType === "mouse") setHeld(true);
+          }}
+          onPointerLeave={(event) => {
+            if (event.pointerType === "mouse") setHeld(false);
+          }}
+          onFocusCapture={() => setHeld(true)}
+          onBlurCapture={(event) => {
+            if (!event.currentTarget.contains(event.relatedTarget)) setHeld(false);
+          }}
+        >
+          <div className="flex items-center gap-1 sm:gap-3 bg-zinc-900 px-1 sm:px-3">
+            <button
+              type="button"
+              className="shrink-0 text-zinc-300 hover:text-orange-400 p-1"
+              onClick={() => go(currentIndex - 1)}
+              aria-label={messages.services.previous}
             >
-              {services.map((service, index) => (
-                <div key={index} className="min-w-full ">
-                  <div className="text-center">
-                    <img
-                      src={`src/assets/images/banners/${service.src}`}
-                      alt={`${service.title} banner`}
-                      className="max-w-7xl mx-auto mb-4"
-                    />
-                    <h3 className="text-2xl font-semibold mb-3 text-orange-400">
-                      {service.title}
-                    </h3>
-                    <p className="text-white pb-8">{service.description}</p>
-                  </div>
-                </div>
-              ))}
+              <svg viewBox="0 0 24 24" className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth="1.75" aria-hidden="true">
+                <path d="M14.5 6.5 9 12l5.5 5.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </button>
+            <div className="relative h-28 sm:h-36 md:h-44 flex-1 overflow-hidden">
+              <AnimatePresence initial={false}>
+                <motion.img
+                  key={serviceBanners[currentIndex]}
+                  src={serviceBanners[currentIndex]}
+                  alt=""
+                  className="absolute inset-0 h-full w-full object-contain"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: prefersReducedMotion() ? 0 : 0.45 }}
+                />
+              </AnimatePresence>
             </div>
+            <button
+              type="button"
+              className="shrink-0 text-zinc-300 hover:text-orange-400 p-1"
+              onClick={() => go(currentIndex + 1)}
+              aria-label={messages.services.next}
+            >
+              <svg viewBox="0 0 24 24" className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth="1.75" aria-hidden="true">
+                <path d="M9.5 6.5 15 12l-5.5 5.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </button>
           </div>
-
-          <button
-            className="absolute left-0 top-1/2 -translate-y-1/2 bg-orange-600 p-2 rounded-full text-white hover:bg-orange-800"
-            onClick={prevSlide}
-            aria-label="Anterior"
-          >
-            ←
-          </button>
-
-          <button
-            className="absolute right-0 top-1/2 -translate-y-1/2 bg-orange-600 p-2 rounded-full text-white hover:bg-orange-800"
-            onClick={nextSlide}
-            aria-label="Siguiente"
-          >
-            →
-          </button>
-
-          <div className="flex justify-center mt-4 gap-2">
-            {services.map((_, index) => (
+          <div className="p-4 sm:p-6 text-center">
+            <h3 className="text-xl sm:text-2xl font-semibold mb-3 text-orange-400">{current.title}</h3>
+            <p className="text-slate-200">{current.description}</p>
+          </div>
+        </div>
+        <div className="flex justify-center items-center mt-4 gap-4">
+          <div className="flex gap-2">
+            {items.map((item, index) => (
               <button
-                key={index}
-                className={`h-2 w-2 rounded-full ${
-                  index === currentIndex ? "bg-orange-400" : "bg-zinc-500"
-                }`}
+                key={item.title}
+                type="button"
+                className={`h-2.5 w-2.5 rounded-full ${index === currentIndex ? "bg-orange-400" : "bg-zinc-500"}`}
                 onClick={() => setCurrentIndex(index)}
-                aria-label={`Ir al slide ${index + 1}`}
+                aria-label={`${messages.services.goTo} ${index + 1}`}
+                aria-current={index === currentIndex}
               />
             ))}
           </div>
+          <button
+            type="button"
+            className="text-sm text-slate-300 hover:text-white"
+            onClick={() => setManualPause((value) => !value)}
+            aria-pressed={manualPause}
+          >
+            {manualPause ? messages.services.resume : messages.services.pause}
+          </button>
         </div>
       </div>
     </section>

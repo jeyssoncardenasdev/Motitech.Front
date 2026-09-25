@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500" role="img">
+  <title>Azure and AWS</title>
+  <defs>
+    <pattern id="cloud-grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" fill="none" stroke="#27272a" stroke-width="1"/>
+    </pattern>
+    <linearGradient id="cloud-fade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fb923c" stop-opacity="0.16"/>
+      <stop offset="100%" stop-color="#fb923c" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="500" fill="#18181b"/>
+  <rect width="1200" height="500" fill="url(#cloud-grid)"/>
+  <rect width="1200" height="4" fill="#fb923c"/>
+  <path d="M470 250 H560" stroke="#fb923c" stroke-width="3"/>
+  <path d="M640 250 H730" stroke="#fb923c" stroke-width="3"/>
+  <circle cx="600" cy="250" r="36" fill="#18181b" stroke="#fb923c" stroke-width="3"/>
+  <path d="M588 250h22M602 240l10 10-10 10" fill="none" stroke="#fb923c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <g>
+    <rect x="50" y="70" width="420" height="360" rx="24" fill="#09090b" stroke="#3f3f46" stroke-width="2"/>
+    <rect x="50" y="70" width="420" height="92" rx="24" fill="url(#cloud-fade)"/>
+    <rect x="50" y="130" width="420" height="32" fill="#09090b"/>
+    <path d="M150 118h40a28 28 0 0 1 28-22 34 34 0 0 1 66 8h18a24 24 0 0 1 0 48H168a30 30 0 0 1-18-34z" fill="none" stroke="#fb923c" stroke-width="3"/>
+    <text x="330" y="122" fill="#fafafa" font-family="Segoe UI, system-ui, sans-serif" font-size="32" font-weight="700">Azure</text>
+    <g>
+      <rect x="86" y="188" width="348" height="58" rx="12" fill="#27272a"/>
+      <circle cx="118" cy="217" r="8" fill="#fb923c"/>
+      <rect x="142" y="210" width="160" height="12" rx="6" fill="#e4e4e7"/>
+      <rect x="86" y="262" width="348" height="58" rx="12" fill="#27272a"/>
+      <circle cx="118" cy="291" r="8" fill="#fb923c"/>
+      <rect x="142" y="284" width="200" height="12" rx="6" fill="#e4e4e7"/>
+      <rect x="86" y="336" width="348" height="58" rx="12" fill="#27272a"/>
+      <circle cx="118" cy="365" r="8" fill="#52525b"/>
+      <rect x="142" y="358" width="120" height="12" rx="6" fill="#a1a1aa"/>
+    </g>
+  </g>
+  <g>
+    <rect x="730" y="70" width="420" height="360" rx="24" fill="#09090b" stroke="#3f3f46" stroke-width="2"/>
+    <rect x="730" y="70" width="420" height="92" rx="24" fill="url(#cloud-fade)"/>
+    <rect x="730" y="130" width="420" height="32" fill="#09090b"/>
+    <path d="M820 128c8-22 28-28 44-18 8-16 32-20 46-6 16-4 30 8 28 24h8c16 2 24 18 16 32H812c-10-8-8-22 8-32z" fill="none" stroke="#fb923c" stroke-width="3"/>
+    <text x="930" y="122" fill="#fafafa" font-family="Segoe UI, system-ui, sans-serif" font-size="32" font-weight="700">AWS</text>
+    <g>
+      <rect x="766" y="188" width="348" height="58" rx="12" fill="#27272a"/>
+      <circle cx="798" cy="217" r="8" fill="#fb923c"/>
+      <rect x="822" y="210" width="180" height="12" rx="6" fill="#e4e4e7"/>
+      <rect x="766" y="262" width="348" height="58" rx="12" fill="#27272a"/>
+      <circle cx="798" cy="291" r="8" fill="#fb923c"/>
+      <rect x="822" y="284" width="140" height="12" rx="6" fill="#e4e4e7"/>
+      <rect x="766" y="336" width="348" height="58" rx="12" fill="#27272a"/>
+      <circle cx="798" cy="365" r="8" fill="#52525b"/>
+      <rect x="822" y="358" width="210" height="12" rx="6" fill="#a1a1aa"/>
+    </g>
+  </g>
+</svg>

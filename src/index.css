@@ -1,8 +1,19 @@
 @import "tailwindcss";
 
+@theme {
+  --font-poppins: "Poppins", "Montserrat", sans-serif;
+}
+
 @layer base {
-  html, body, #root {
-    background-color: #18181b; /* Equivalente a bg-gray-100 */
+  html,
+  body,
+  #root {
+    background-color: #18181b;
     min-height: 100vh;
+    overflow-x: clip;
+  }
+
+  img {
+    max-width: 100%;
   }
 }

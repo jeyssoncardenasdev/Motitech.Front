@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500" role="img">
+  <title>Data and system integration</title>
+  <defs>
+    <pattern id="data-grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" fill="none" stroke="#27272a" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="data-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fb923c" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#fb923c" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="500" fill="#18181b"/>
+  <rect width="1200" height="500" fill="url(#data-grid)"/>
+  <ellipse cx="250" cy="260" rx="160" ry="150" fill="url(#data-glow)"/>
+  <rect width="1200" height="4" fill="#fb923c"/>
+  <path d="M360 250 H470" stroke="#fb923c" stroke-width="3"/>
+  <path d="M630 250 H760" stroke="#fb923c" stroke-width="3"/>
+  <path d="M458 250l12-8v16z" fill="#fb923c"/>
+  <path d="M748 250l12-8v16z" fill="#fb923c"/>
+  <g>
+    <ellipse cx="210" cy="340" rx="110" ry="32" fill="#27272a" stroke="#fb923c" stroke-width="3"/>
+    <path d="M100 180v160c0 18 49 32 110 32s110-14 110-32V180" fill="#18181b" stroke="#fb923c" stroke-width="3"/>
+    <ellipse cx="210" cy="180" rx="110" ry="32" fill="#27272a" stroke="#fb923c" stroke-width="3"/>
+    <ellipse cx="210" cy="230" rx="110" ry="22" fill="none" stroke="#fb923c" stroke-width="2" opacity="0.7"/>
+    <ellipse cx="210" cy="280" rx="110" ry="22" fill="none" stroke="#fb923c" stroke-width="2" opacity="0.45"/>
+    <text x="210" y="188" text-anchor="middle" fill="#fafafa" font-family="Segoe UI, system-ui, sans-serif" font-size="22" font-weight="700">SQL</text>
+  </g>
+  <g>
+    <rect x="470" y="155" width="160" height="190" rx="20" fill="#09090b" stroke="#fb923c" stroke-width="2"/>
+    <rect x="498" y="184" width="104" height="14" rx="7" fill="#e4e4e7"/>
+    <rect x="498" y="214" width="104" height="14" rx="7" fill="#3f3f46"/>
+    <rect x="498" y="244" width="80" height="14" rx="7" fill="#3f3f46"/>
+    <rect x="498" y="282" width="104" height="32" rx="8" fill="#fb923c"/>
+    <path d="M520 298h60M568 290l12 8-12 8" fill="none" stroke="#18181b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g>
+    <rect x="760" y="78" width="380" height="96" rx="16" fill="#27272a" stroke="#3f3f46"/>
+    <rect x="788" y="106" width="40" height="40" rx="8" fill="#fb923c"/>
+    <path d="M800 126h16M808 118v16" stroke="#18181b" stroke-width="3" stroke-linecap="round"/>
+    <rect x="848" y="110" width="180" height="12" rx="6" fill="#fafafa"/>
+    <rect x="848" y="132" width="120" height="8" rx="4" fill="#52525b"/>
+    <rect x="760" y="202" width="380" height="96" rx="16" fill="#27272a" stroke="#3f3f46"/>
+    <rect x="788" y="230" width="40" height="40" rx="8" fill="#3f3f46" stroke="#fb923c" stroke-width="2"/>
+    <circle cx="808" cy="250" r="7" fill="#fb923c"/>
+    <rect x="848" y="234" width="150" height="12" rx="6" fill="#fafafa"/>
+    <rect x="848" y="256" width="200" height="8" rx="4" fill="#52525b"/>
+    <rect x="760" y="326" width="380" height="96" rx="16" fill="#27272a" stroke="#3f3f46"/>
+    <rect x="788" y="354" width="40" height="40" rx="8" fill="#3f3f46"/>
+    <path d="M800 382h16l-4-16h-8z" fill="#fb923c"/>
+    <rect x="848" y="358" width="160" height="12" rx="6" fill="#fafafa"/>
+    <rect x="848" y="380" width="100" height="8" rx="4" fill="#52525b"/>
+  </g>
+</svg>

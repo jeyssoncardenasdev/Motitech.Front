@@ -1,104 +1,126 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { useState } from "react";
-import { FaGlobeAmericas } from "react-icons/fa";
+import { useI18n } from "../../../../i18n/LanguageProvider";
+import type { Locale } from "../../../../i18n/types";
 
-const Navbar = () => {
+const links = [
+  { key: "home", path: "/" },
+  { key: "about", path: "/about" },
+  { key: "hire", path: "/hire" },
+  { key: "projects", path: "/works" },
+  { key: "contact", path: "/contact" },
+] as const;
+
+export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const location = useLocation();
-  const [language, setLanguage] = useState("en");
+  const { locale, setLocale, messages } = useI18n();
 
-  const navItems = [
-    { label: "Inicio", path: "/" },
-    { label: "Sobre mí", path: "/about" },
-    { label: "Contratación", path: "/hire" },
-    { label: "Proyectos", path: "/works" },
-    { label: "Contacto", path: "/contact" },
-  ];
+  const itemClass = ({ isActive }: { isActive: boolean }) =>
+    isActive ? "text-orange-400" : "text-white hover:text-orange-400";
 
-  const getLinkStyle = (path: string) =>
-    location.pathname === path
-      ? "text-orange-400 font-normal"
-      : "text-white hover:text-orange-400";
+  const switchLanguage = (next: Locale) => {
+    setLocale(next);
+    setIsOpen(false);
+  };
 
   return (
-    <nav className="bg-zinc-800 text-white sticky top-0 z-50 shadow-md w-full">
-      <div className="w-full flex items-center justify-between px-4 py-4">
-        {/* Logo */}
-        <div className="flex-shrink-0">
-          <h1 className="text-2xl font-normal">Motitech |</h1>
+    <nav className="bg-zinc-800 text-white sticky top-0 z-50 shadow-md" aria-label="Main">
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-4 gap-4">
+        <Link to="/" className="text-2xl shrink-0">
+          Motitech
+        </Link>
+
+        <div className="hidden lg:flex items-center gap-6">
+          {links.map((item) => (
+            <NavLink key={item.path} to={item.path} end={item.path === "/"} className={itemClass}>
+              {messages.nav[item.key]}
+            </NavLink>
+          ))}
         </div>
 
-        {/* Enlaces */}
-        <div className="hidden md:flex items-center justify-center flex-1">
-          <div className="flex space-x-8">
-            {navItems.map((item) => (
-              <Link
-                key={item.path}
-                to={item.path}
-                className={getLinkStyle(item.path)}
-              >
-                {item.label}
-              </Link>
-            ))}
-          </div>
-        </div>
+        <LanguageSwitch
+          locale={locale}
+          label={messages.nav.language}
+          onChange={switchLanguage}
+          className="hidden lg:flex"
+        />
 
-        {/* Idioma */}
-        <div className="hidden md:flex items-center space-x-4">
-        <div className="flex items-center space-x-2 bg-zinc-700 px-2 py-1 rounded-md">
-          <FaGlobeAmericas className="text-white" />
-          <select
-            value={language}
-            onChange={(e) => setLanguage(e.target.value)}
-            className="bg-zinc-700 text-white text-sm focus:outline-none"
-          >
-            <option value="en">🇺🇸 EN</option>
-            <option value="es">🇪🇸 ES</option>
-          </select>
-        </div>
-        </div>
-
-        {/* Menú hamburguesa */}
-        <div className="md:hidden">
-          <button
-            className="text-white text-2xl"
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            ☰
-          </button>
-        </div>
+        <button
+          type="button"
+          className="lg:hidden text-2xl px-2 min-h-11 min-w-11"
+          aria-expanded={isOpen}
+          aria-label={isOpen ? messages.nav.closeMenu : messages.nav.openMenu}
+          onClick={() => setIsOpen((open) => !open)}
+        >
+          {isOpen ? "✕" : "☰"}
+        </button>
       </div>
 
-      {/* Menú móvil */}
       {isOpen && (
-        <div className="md:hidden flex flex-col items-center space-y-4 pb-4">
-          {navItems.map((item) => (
-            <Link
+        <div className="lg:hidden flex flex-col items-center gap-4 px-4 pb-4">
+          {links.map((item) => (
+            <NavLink
               key={item.path}
               to={item.path}
-              className={`${getLinkStyle(item.path)} text-lg`}
+              end={item.path === "/"}
+              className={itemClass}
               onClick={() => setIsOpen(false)}
             >
-              {item.label}
-            </Link>
+              {messages.nav[item.key]}
+            </NavLink>
           ))}
-
-          {/* Idioma móvil */}
-          <div className="flex items-center space-x-2 bg-zinc-700 px-2 py-1 rounded-md">
-            <FaGlobeAmericas className="text-white" />
-            <select
-              value={language}
-              onChange={(e) => setLanguage(e.target.value)}
-              className="bg-zinc-700 text-white text-sm focus:outline-none"
-            >
-              <option value="en">🇺🇸 EN</option>
-              <option value="es">🇪🇸 ES</option>
-            </select>
-          </div>
+          <LanguageSwitch
+            locale={locale}
+            label={messages.nav.language}
+            onChange={switchLanguage}
+            className="flex"
+          />
         </div>
       )}
     </nav>
   );
-};
+}
 
-export default Navbar;
+function LanguageSwitch({
+  locale,
+  label,
+  onChange,
+  className,
+}: {
+  locale: Locale;
+  label: string;
+  onChange: (locale: Locale) => void;
+  className: string;
+}) {
+  return (
+    <div className={`${className} items-center gap-1 bg-zinc-700 rounded-md p-1`} role="group" aria-label={label}>
+      <LangButton active={locale === "en"} onClick={() => onChange("en")}>
+        EN
+      </LangButton>
+      <LangButton active={locale === "es"} onClick={() => onChange("es")}>
+        ES
+      </LangButton>
+    </div>
+  );
+}
+
+function LangButton({
+  active,
+  onClick,
+  children,
+}: {
+  active: boolean;
+  onClick: () => void;
+  children: string;
+}) {
+  return (
+    <button
+      type="button"
+      aria-pressed={active}
+      onClick={onClick}
+      className={`px-2 py-1 text-sm rounded ${active ? "bg-orange-400 text-zinc-900" : "text-white"}`}
+    >
+      {children}
+    </button>
+  );
+}
