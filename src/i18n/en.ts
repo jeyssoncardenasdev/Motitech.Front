@@ -588,6 +588,12 @@ export const en: Messages = {
         ],
       },
       {
+        heading: "Visits",
+        paragraphs: [
+          "This site uses Google Analytics 4 to count visits. Google may receive the page you open, the browser, and an approximate location. I use that to see which pages are read. I do not sell it.",
+        ],
+      },
+      {
         heading: "When you write to me",
         paragraphs: [
           "The contact form sends your name, email address, and message through Formspree, which forwards them to jeysson.cardenas.rojas@outlook.com. I use that information only to answer and, if we agree, to deliver the service. I do not sell it. I delete a contact message from my inbox when you ask, unless I must keep it for a legal or accounting duty.",

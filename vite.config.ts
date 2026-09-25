@@ -9,12 +9,12 @@ const contentSecurityPolicy = [
   "base-uri 'self'",
   "object-src 'none'",
   "form-action 'none'",
-  "script-src 'self'",
+  "script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com",
   "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
   "font-src 'self' https://fonts.gstatic.com",
   // data: allows the small SVG logos that Vite inlines into the page.
-  "img-src 'self' data:",
-  "connect-src 'self' https://formspree.io",
+  "img-src 'self' data: https://www.google-analytics.com https://www.googletagmanager.com",
+  "connect-src 'self' https://formspree.io https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com",
   "upgrade-insecure-requests",
 ].join("; ");
 

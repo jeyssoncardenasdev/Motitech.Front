@@ -594,6 +594,12 @@ export const es: Messages = {
         ],
       },
       {
+        heading: "Visitas",
+        paragraphs: [
+          "Este sitio usa Google Analytics 4 para contar visitas. Google puede recibir la página que abres, el navegador y una ubicación aproximada. Lo uso para ver qué páginas se leen. No lo vendo.",
+        ],
+      },
+      {
         heading: "Cuando me escribes",
         paragraphs: [
           "El formulario de contacto envía tu nombre, tu correo y el mensaje a través de Formspree, que los reenvía a jeysson.cardenas.rojas@outlook.com. Uso esa información solo para responder y, si acordamos un servicio, para ejecutarlo. No la vendo. Borro un mensaje de contacto de mi bandeja cuando me lo pides, salvo que deba conservarlo por un deber legal o contable.",

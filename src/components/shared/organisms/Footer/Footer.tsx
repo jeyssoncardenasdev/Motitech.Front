@@ -15,12 +15,12 @@ const Footer = () => {
           </p>
           <p className="text-xs text-faint mt-1">{messages.footer.builtWithAi}</p>
         </div>
-        <div className="flex gap-4 text-sm">
-          <Link to="/terms" className="hover:text-ink">
+        <div className="flex items-center justify-center gap-4 text-center text-sm">
+          <Link to="/terms" className="w-28 hover:text-ink sm:w-auto">
             {messages.footer.terms}
           </Link>
-          <span aria-hidden="true">|</span>
-          <Link to="/privacy-policy" className="hover:text-ink">
+          <span aria-hidden="true" className="h-8 w-px shrink-0 bg-current" />
+          <Link to="/privacy-policy" className="w-28 hover:text-ink sm:w-auto">
             {messages.footer.privacy}
           </Link>
         </div>
