@@ -236,6 +236,7 @@ export const es: Messages = {
     emailLabel: "Correo",
     nameLabel: "Nombre",
     messageLabel: "Mensaje",
+    messageHint: "Mínimo 10 caracteres. Máximo 500.",
     pageIntro:
       "Escríbeme aquí. Tras las dos aceptaciones, el mensaje llega a mi bandeja. Respondo con disponibilidad, una primera lectura del problema y el siguiente paso.",
     methodConsent:
@@ -243,6 +244,7 @@ export const es: Messages = {
     termsConsentLead: "He leído y acepto los",
     termsConsentLink: "términos y condiciones",
     blockedHint: "Nombre, correo, mensaje y las dos casillas son obligatorios antes de enviar.",
+    cooldown: "Ya enviaste un mensaje. Puedes enviar otro en {minutes} min.",
     sending: "Enviando…",
     success: "Mensaje enviado. Respondo al correo que escribiste.",
     error: "No se pudo enviar el mensaje. Inténtalo de nuevo en un momento.",
@@ -580,7 +582,7 @@ export const es: Messages = {
       {
         heading: "Qué se guarda en tu dispositivo",
         paragraphs: [
-          "Si eliges un idioma, esa elección se guarda en el almacenamiento local del navegador para abrir el sitio en el mismo idioma la próxima vez. Un registro corto del formulario de contacto puede quedar en esta pestaña. Guarda la hora y si el envío funcionó. No guarda tu nombre, tu correo ni el mensaje. El sitio no recoge datos de cuenta.",
+          "Si eliges un idioma, esa elección se guarda en el almacenamiento local del navegador para abrir el sitio en el mismo idioma la próxima vez. Un registro corto del formulario de contacto puede quedar en esta pestaña. Guarda la hora y si el envío funcionó. No guarda tu nombre, tu correo ni el mensaje. Tras un envío correcto, este navegador también guarda la hora durante 15 minutos para no permitir otro envío seguido. Ese registro es solo una marca de tiempo. El sitio no recoge datos de cuenta.",
         ],
       },
       {

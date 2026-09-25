@@ -236,6 +236,7 @@ export const en: Messages = {
     emailLabel: "Email",
     nameLabel: "Name",
     messageLabel: "Message",
+    messageHint: "Minimum 10 characters. Maximum 500.",
     pageIntro:
       "Write here. After both agreements, the message is delivered to my inbox. I reply with availability, a first read of the problem, and the next step.",
     methodConsent:
@@ -243,6 +244,7 @@ export const en: Messages = {
     termsConsentLead: "I have read and accept the",
     termsConsentLink: "terms and conditions",
     blockedHint: "Name, email, message, and both boxes are required before sending.",
+    cooldown: "You already sent a message. You can send another in {minutes} min.",
     sending: "Sending…",
     success: "Message sent. I will reply to the email you wrote.",
     error: "The message could not be sent. Try again in a moment.",
@@ -574,7 +576,7 @@ export const en: Messages = {
       {
         heading: "What is stored on your device",
         paragraphs: [
-          "If you choose a language, that choice is saved in local storage in your browser so the site opens in the same language next time. A short delivery log of the contact form may stay in this browser tab. It records time and whether the send succeeded. It does not record your name, email, or message. No account data is collected by the site itself.",
+          "If you choose a language, that choice is saved in local storage in your browser so the site opens in the same language next time. A short delivery log of the contact form may stay in this browser tab. It records time and whether the send succeeded. It does not record your name, email, or message. After a successful send, this browser also keeps the time of that send for 15 minutes so the form cannot be submitted again right away. That record is only a timestamp. No account data is collected by the site itself.",
         ],
       },
       {

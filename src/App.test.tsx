@@ -101,6 +101,8 @@ describe("Motitech", () => {
     expect(fetchMock).toHaveBeenCalledOnce();
     expect(String(fetchMock.mock.calls[0][0])).toContain("formspree.io/f/xvgagrlg");
     expect(await screen.findByText(/Message sent/)).toBeInTheDocument();
+    expect(screen.getByText(/You can send another in 15 min/)).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "Send an email" })).toBeDisabled();
     vi.unstubAllGlobals();
   });
 

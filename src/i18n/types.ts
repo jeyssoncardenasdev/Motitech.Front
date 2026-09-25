@@ -84,11 +84,13 @@ export interface Messages {
     emailLabel: string;
     nameLabel: string;
     messageLabel: string;
+    messageHint: string;
     pageIntro: string;
     methodConsent: string;
     termsConsentLead: string;
     termsConsentLink: string;
     blockedHint: string;
+    cooldown: string;
     sending: string;
     success: string;
     error: string;
