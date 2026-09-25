@@ -53,6 +53,7 @@ export const en: Messages = {
     contact: "Contact",
     openMenu: "Open menu",
     closeMenu: "Close menu",
+    menu: "Menu",
     language: "Language",
     themeToLight: "Switch to light mode",
     themeToDark: "Switch to dark mode",
@@ -67,6 +68,7 @@ export const en: Messages = {
     scroll: "Scroll to technologies",
   },
   technologies: {
+    eyebrow: "Stack",
     title: "Technologies I use to ship complete systems",
     intro:
       "Most of my work connects business systems to databases and to Azure or AWS. I also use AI engineering tools so the client can move faster without skipping a written spec.",
@@ -130,6 +132,7 @@ export const en: Messages = {
     ],
   },
   methodology: {
+    eyebrow: "Method",
     title: "How we work",
     intro:
       "Clients who want vibe coding and an AI engineer get that support here, with a method they can read before the project starts.",
@@ -152,6 +155,7 @@ export const en: Messages = {
     ],
   },
   services: {
+    eyebrow: "Services",
     title: "How I can help",
     previous: "Previous service",
     next: "Next service",
@@ -231,6 +235,7 @@ export const en: Messages = {
     ],
   },
   contact: {
+    eyebrow: "Contact",
     title: "Ready to work together?",
     intro:
       "Tell me about the system you need to build, integrate, or move to the cloud.",
@@ -252,6 +257,7 @@ export const en: Messages = {
     error: "The message could not be sent. Try again in a moment.",
   },
   socials: {
+    eyebrow: "Profiles",
     title: "Professional profiles",
     intro: "More about my background and public code:",
     linkedin: "LinkedIn",

@@ -53,6 +53,7 @@ export const es: Messages = {
     contact: "Contacto",
     openMenu: "Abrir menú",
     closeMenu: "Cerrar menú",
+    menu: "Menú",
     language: "Idioma",
     themeToLight: "Cambiar a modo claro",
     themeToDark: "Cambiar a modo oscuro",
@@ -67,6 +68,7 @@ export const es: Messages = {
     scroll: "Ir a tecnologías",
   },
   technologies: {
+    eyebrow: "Herramientas",
     title: "Tecnologías con las que construyo sistemas completos",
     intro:
       "La mayor parte de mi trabajo conecta sistemas de negocio con bases de datos y con Azure o AWS. También uso herramientas de ingeniería con IA para avanzar más rápido sin saltarnos una especificación escrita.",
@@ -130,6 +132,7 @@ export const es: Messages = {
     ],
   },
   methodology: {
+    eyebrow: "Método",
     title: "Cómo trabajamos",
     intro:
       "Quien busca vibe coding y un ingeniero de IA encuentra ese apoyo aquí, con un método que se puede leer antes de empezar el proyecto.",
@@ -152,6 +155,7 @@ export const es: Messages = {
     ],
   },
   services: {
+    eyebrow: "Servicios",
     title: "Te puedo ayudar con",
     previous: "Servicio anterior",
     next: "Servicio siguiente",
@@ -231,6 +235,7 @@ export const es: Messages = {
     ],
   },
   contact: {
+    eyebrow: "Contacto",
     title: "¿Listo para trabajar juntos?",
     intro:
       "Cuéntame el sistema que necesitas construir, integrar o mover a la nube.",
@@ -252,6 +257,7 @@ export const es: Messages = {
     error: "No se pudo enviar el mensaje. Inténtalo de nuevo en un momento.",
   },
   socials: {
+    eyebrow: "Perfiles",
     title: "Perfiles profesionales",
     intro: "Más sobre mi trayectoria y el código público:",
     linkedin: "LinkedIn",

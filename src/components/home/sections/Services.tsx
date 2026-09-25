@@ -2,6 +2,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { serviceBanners } from "../../../content/catalog";
 import { useI18n } from "../../../i18n/LanguageProvider";
+import SectionHeading from "../../shared/SectionHeading";
 
 export const SERVICE_AUTOPLAY_MS = 5000;
 
@@ -30,9 +31,9 @@ const Services = () => {
   }, [paused, items.length, currentIndex]);
 
   return (
-    <section id="services" className="py-16 bg-canvas" aria-roledescription="carousel">
+    <section id="services" className="bg-canvas py-24 md:py-28" aria-roledescription="carousel">
       <div className="max-w-4xl mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">{messages.services.title}</h2>
+        <SectionHeading eyebrow={messages.services.eyebrow} title={messages.services.title} />
         <div
           className="bg-raised"
           onPointerEnter={(event) => {
@@ -83,7 +84,7 @@ const Services = () => {
             </button>
           </div>
           <div className="p-4 sm:p-6 text-center">
-            <h3 className="text-xl sm:text-2xl font-semibold mb-3 text-link">{current.title}</h3>
+            <h3 className="mb-3 text-xl font-semibold sm:text-2xl">{current.title}</h3>
             <p className="text-muted">{current.description}</p>
           </div>
         </div>

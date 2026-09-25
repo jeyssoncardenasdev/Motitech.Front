@@ -6,24 +6,24 @@ const Hero = () => {
   const { messages } = useI18n();
 
   return (
-    <section className="relative min-h-[70vh] md:min-h-[80vh] flex items-center justify-center text-center px-4 py-16 md:py-24">
+    <section className="relative min-h-[70vh] md:min-h-[80vh] flex items-center justify-center text-center px-4 py-24 md:py-28">
       <div className="max-w-4xl mx-auto">
-        <motion.h1
-          className="text-3xl sm:text-5xl md:text-6xl font-bold mb-4"
+        <motion.p
+          className="mb-4 text-sm uppercase tracking-[0.16em] text-faint"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
           {messages.hero.greeting}
-        </motion.h1>
-        <motion.p
-          className="text-3xl sm:text-5xl md:text-6xl font-bold mb-4 text-link"
+        </motion.p>
+        <motion.h1
+          className="mb-4 text-4xl font-bold sm:text-5xl md:text-6xl"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3, duration: 0.6 }}
         >
           {messages.hero.name}
-        </motion.p>
+        </motion.h1>
         <motion.p
           className="text-xl md:text-2xl text-muted mb-4"
           initial={{ opacity: 0 }}
@@ -47,7 +47,7 @@ const Hero = () => {
         >
           <Link
             to="/contact"
-            className="bg-brand hover:bg-brand-hover text-brand-ink font-bold py-3 px-8 inline-block"
+            className="brand-button"
           >
             {messages.hero.cta}
           </Link>

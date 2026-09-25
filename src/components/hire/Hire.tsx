@@ -13,14 +13,14 @@ const Hire = () => {
           <p className="text-muted text-lg">{hire.intro}</p>
         </header>
 
-        <Methodology />
+        <Methodology className="py-2" />
 
         <section>
           <h2 className="text-2xl font-semibold mb-4">{hire.offerTitle}</h2>
           <ul className="grid md:grid-cols-2 gap-4">
             {hire.offers.map((offer) => (
               <li key={offer.title} className="bg-surface p-5">
-                <h3 className="text-link font-semibold mb-2">{offer.title}</h3>
+                <h3 className="mb-2 font-semibold">{offer.title}</h3>
                 <p className="text-muted">{offer.description}</p>
               </li>
             ))}
@@ -54,7 +54,7 @@ const Hire = () => {
         <div className="flex justify-center">
           <Link
             to="/contact"
-            className="bg-brand hover:bg-brand-hover text-brand-ink font-bold py-3 px-8 text-center"
+            className="brand-button"
           >
             {hire.cta}
           </Link>

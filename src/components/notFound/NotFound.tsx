@@ -9,7 +9,7 @@ const NotFound = () => {
       <div className="max-w-xl mx-auto px-4 py-20 text-center">
         <h1 className="text-4xl font-bold mb-4">{notFound.title}</h1>
         <p className="text-muted mb-8">{notFound.body}</p>
-        <Link to="/" className="bg-brand text-brand-ink font-bold py-3 px-8 inline-block">
+        <Link to="/" className="brand-button">
           {notFound.cta}
         </Link>
       </div>

@@ -11,7 +11,7 @@ const Certifications = () => {
           <li key={`${cert.title}-${cert.date}`} className="bg-raised p-5 text-ink">
             <h3 className="font-semibold mb-2">{cert.title}</h3>
             <p className="text-sm text-muted">{cert.institution}</p>
-            <p className="text-sm text-link mt-1">{cert.date}</p>
+            <p className="mt-1 text-sm text-faint">{cert.date}</p>
           </li>
         ))}
       </ul>

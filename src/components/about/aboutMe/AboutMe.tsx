@@ -7,7 +7,7 @@ const AboutMe = () => {
   const { about } = messages;
 
   return (
-    <section className="max-w-screen-xl mx-auto min-h-[70vh] flex flex-col lg:flex-row">
+    <section className="mx-auto flex min-h-[70vh] max-w-screen-xl flex-col lg:flex-row">
       <motion.div
         className="w-full lg:w-2/5 flex items-center justify-center bg-surface p-8 sm:p-10"
         initial={{ opacity: 0, x: -40 }}

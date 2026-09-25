@@ -58,11 +58,12 @@ const ContactPage = () => {
   return (
     <div className="bg-canvas text-ink min-h-[70vh]">
       <div className="max-w-3xl mx-auto px-4 py-16 sm:py-20">
-        <h1 className="text-3xl sm:text-4xl font-bold mb-4 text-center">{contact.title}</h1>
+        <p className="mb-3 text-center text-sm uppercase tracking-[0.16em] text-faint">{contact.eyebrow}</p>
+        <h1 className="mb-4 text-center text-3xl font-bold sm:text-4xl">{contact.title}</h1>
         <p className="text-muted mb-4 text-center">{contact.intro}</p>
         <p className="text-muted mb-8 text-center">{contact.pageIntro}</p>
 
-        <form className="bg-surface p-5 sm:p-8 space-y-5 text-left" onSubmit={onSubmit}>
+        <form className="space-y-5 bg-surface p-5 text-left sm:p-8" onSubmit={onSubmit}>
           <label className="block">
             <span className="block mb-1">{contact.nameLabel}</span>
             <input
@@ -71,7 +72,7 @@ const ContactPage = () => {
               autoComplete="name"
               value={name}
               onChange={(event) => setName(event.target.value)}
-              className="w-full bg-canvas border border-line px-3 py-2"
+              className="w-full border border-line bg-canvas px-3 py-2"
             />
           </label>
           <label className="block">
@@ -83,7 +84,7 @@ const ContactPage = () => {
               autoComplete="email"
               value={email}
               onChange={(event) => setEmail(event.target.value)}
-              className="w-full bg-canvas border border-line px-3 py-2"
+              className="w-full border border-line bg-canvas px-3 py-2"
             />
           </label>
           <div>
@@ -99,7 +100,7 @@ const ContactPage = () => {
               value={message}
               onChange={(event) => setMessage(event.target.value)}
               aria-describedby="message-limit"
-              className="w-full bg-canvas border border-line px-3 py-2"
+              className="w-full border border-line bg-canvas px-3 py-2"
             />
             <p
               id="message-limit"
@@ -153,13 +154,13 @@ const ContactPage = () => {
             <button
               type="submit"
               disabled={!ready || status === "sending" || cooldownMs > 0}
-              className="bg-brand disabled:bg-chip disabled:text-muted disabled:cursor-not-allowed text-brand-ink font-bold py-3 px-8"
+              className="brand-button"
             >
               {status === "sending" ? contact.sending : contact.emailCta}
             </button>
           </div>
           {cooldownMs > 0 && (
-            <p className="text-sm text-link">
+            <p className="text-sm text-faint">
               {contact.cooldown.replace("{minutes}", String(Math.max(1, Math.ceil(cooldownMs / 60000))))}
             </p>
           )}

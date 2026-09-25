@@ -1,5 +1,5 @@
 import { Link, NavLink } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useRef, useState, type KeyboardEvent as ReactKeyboardEvent } from "react";
 import { useI18n } from "../../../../i18n/LanguageProvider";
 import { useTheme } from "../../../../theme/ThemeProvider";
 import type { Locale } from "../../../../i18n/types";
@@ -14,8 +14,24 @@ const links = [
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const navRef = useRef<HTMLElement>(null);
+  const panelRef = useRef<HTMLDivElement>(null);
   const { locale, setLocale, messages } = useI18n();
   const { theme, setTheme } = useTheme();
+
+  useEffect(() => {
+    if (!isOpen) return;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const onKey = (event: globalThis.KeyboardEvent) => {
+      if (event.key === "Escape") setIsOpen(false);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", onKey);
+    };
+  }, [isOpen]);
 
   const itemClass = ({ isActive }: { isActive: boolean }) =>
     isActive ? "text-link" : "text-ink hover:text-link";
@@ -26,7 +42,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="bg-surface text-ink sticky top-0 z-50 shadow-md" aria-label="Main">
+    <nav ref={navRef} className="bg-surface text-ink sticky top-0 z-50 shadow-md" aria-label="Main">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-4 gap-4">
         <Link to="/" className="text-2xl shrink-0">
           Motitech
@@ -72,6 +88,7 @@ export default function Navbar() {
             type="button"
             className="text-2xl px-2 min-h-11 min-w-11"
             aria-expanded={isOpen}
+            aria-controls="mobile-menu"
             aria-label={isOpen ? messages.nav.closeMenu : messages.nav.openMenu}
             onClick={() => setIsOpen((open) => !open)}
           >
@@ -81,22 +98,60 @@ export default function Navbar() {
       </div>
 
       {isOpen && (
-        <div className="lg:hidden flex flex-col items-center gap-4 px-4 pb-4">
-          {links.map((item) => (
-            <NavLink
-              key={item.path}
-              to={item.path}
-              end={item.path === "/"}
-              className={itemClass}
-              onClick={() => setIsOpen(false)}
-            >
-              {messages.nav[item.key]}
-            </NavLink>
-          ))}
+        <div className="lg:hidden">
+          <button
+            type="button"
+            className="fixed right-0 bottom-0 left-0 z-40 bg-black/50"
+            style={{ top: navRef.current?.offsetHeight ?? 0 }}
+            aria-label={messages.nav.closeMenu}
+            tabIndex={-1}
+            onClick={() => setIsOpen(false)}
+          />
+          <div
+            ref={panelRef}
+            id="mobile-menu"
+            role="dialog"
+            aria-modal="true"
+            aria-label={messages.nav.menu}
+            className="drawer-panel fixed right-0 bottom-0 z-50 flex w-64 max-w-[75vw] flex-col bg-surface px-6 py-8 shadow-md"
+            style={{ top: navRef.current?.offsetHeight ?? 0 }}
+            onKeyDown={(event) => keepFocusInside(event, panelRef.current)}
+          >
+            <div className="flex flex-col gap-1">
+              {links.map((item) => (
+                <NavLink
+                  key={item.path}
+                  to={item.path}
+                  end={item.path === "/"}
+                  className={({ isActive }) =>
+                    `min-h-11 py-3 text-lg ${isActive ? "text-link" : "text-ink hover:text-link"}`
+                  }
+                  onClick={() => setIsOpen(false)}
+                >
+                  {messages.nav[item.key]}
+                </NavLink>
+              ))}
+            </div>
+          </div>
         </div>
       )}
     </nav>
   );
+}
+
+function keepFocusInside(event: ReactKeyboardEvent, panel: HTMLElement | null) {
+  if (event.key !== "Tab" || !panel) return;
+  const items = [...panel.querySelectorAll<HTMLElement>("a, button")];
+  const first = items[0];
+  const last = items[items.length - 1];
+  if (!first || !last) return;
+  if (event.shiftKey && document.activeElement === first) {
+    event.preventDefault();
+    last.focus();
+  } else if (!event.shiftKey && document.activeElement === last) {
+    event.preventDefault();
+    first.focus();
+  }
 }
 
 function ThemeSwitch({
@@ -116,7 +171,7 @@ function ThemeSwitch({
       aria-pressed={light}
       aria-label={light ? toDark : toLight}
       onClick={onToggle}
-      className="min-h-11 min-w-11 rounded-md border border-line text-sm text-ink"
+      className="min-h-11 min-w-11 border border-line text-sm text-ink"
     >
       {light ? "☾" : "☀"}
     </button>
@@ -135,7 +190,7 @@ function LanguageSwitch({
   className: string;
 }) {
   return (
-    <div className={`${className} items-center gap-1 bg-raised rounded-md p-1`} role="group" aria-label={label}>
+    <div className={`${className} items-center gap-1 bg-raised p-1`} role="group" aria-label={label}>
       <LangButton active={locale === "en"} onClick={() => onChange("en")}>
         EN
       </LangButton>
@@ -160,7 +215,7 @@ function LangButton({
       type="button"
       aria-pressed={active}
       onClick={onClick}
-      className={`px-2 py-1 text-sm rounded ${active ? "bg-brand text-brand-ink" : "text-ink"}`}
+      className={`px-2 py-1 text-sm ${active ? "bg-brand text-brand-ink" : "text-ink"}`}
     >
       {children}
     </button>

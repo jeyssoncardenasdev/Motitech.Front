@@ -40,6 +40,7 @@ export interface Messages {
     contact: string;
     openMenu: string;
     closeMenu: string;
+    menu: string;
     language: string;
     themeToLight: string;
     themeToDark: string;
@@ -53,16 +54,19 @@ export interface Messages {
     scroll: string;
   };
   technologies: {
+    eyebrow: string;
     title: string;
     intro: string;
     items: { name: string; description: string }[];
   };
   methodology: {
+    eyebrow: string;
     title: string;
     intro: string;
     steps: { title: string; description: string }[];
   };
   services: {
+    eyebrow: string;
     title: string;
     previous: string;
     next: string;
@@ -80,6 +84,7 @@ export interface Messages {
     items: ProjectItem[];
   };
   contact: {
+    eyebrow: string;
     title: string;
     intro: string;
     emailCta: string;
@@ -97,7 +102,7 @@ export interface Messages {
     success: string;
     error: string;
   };
-  socials: { title: string; intro: string; linkedin: string; github: string };
+  socials: { eyebrow: string; title: string; intro: string; linkedin: string; github: string };
   about: {
     name: string;
     title: string;

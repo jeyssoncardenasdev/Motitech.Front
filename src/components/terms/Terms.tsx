@@ -8,14 +8,14 @@ const Terms = () => {
   return (
     <div className="bg-canvas text-ink">
       <article className="max-w-3xl mx-auto px-4 py-16">
-        <h1 className="text-3xl font-light text-center text-link">{legal.termsTitle}</h1>
+        <h1 className="text-center text-3xl font-light">{legal.termsTitle}</h1>
         <p className="text-sm text-center text-muted mt-2 mb-10">
           {legal.updated}: {formatToday(locale)}
         </p>
         <div className="space-y-8">
           {legal.terms.map((section) => (
             <section key={section.heading}>
-              <h2 className="text-xl text-link mb-3">{section.heading}</h2>
+              <h2 className="mb-3 text-xl">{section.heading}</h2>
               {section.paragraphs?.map((paragraph) => (
                 <p key={paragraph} className="text-ink">
                   {paragraph}

@@ -27,7 +27,7 @@ describe("Motitech", () => {
 
   it("opens the home page in English", () => {
     renderAt("/");
-    expect(screen.getByRole("heading", { name: "Hello, welcome" })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: "I'm Jeysson Cárdenas" })).toBeInTheDocument();
     expect(document.title).toBe("Motitech | Jeysson Cárdenas — Software Developer");
     expect(screen.getByRole("link", { name: "Projects" })).toBeInTheDocument();
     expect(document.documentElement.lang).toBe("en");
@@ -37,7 +37,7 @@ describe("Motitech", () => {
     const user = userEvent.setup();
     renderAt("/");
     await user.click(screen.getAllByRole("button", { name: "ES" })[0]);
-    expect(screen.getByRole("heading", { name: "Hola, bienvenido" })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: "Soy Jeysson Cárdenas" })).toBeInTheDocument();
     expect(screen.getByRole("link", { name: "Proyectos" })).toBeInTheDocument();
     expect(localStorage.getItem("motitech-locale")).toBe("es");
     expect(document.documentElement.lang).toBe("es");
@@ -47,7 +47,7 @@ describe("Motitech", () => {
     const user = userEvent.setup();
     renderAt("/");
     await user.click(screen.getByRole("link", { name: "Projects" }));
-    expect(screen.getByRole("heading", { name: "Airline technology platforms" })).toBeInTheDocument();
+    expect(await screen.findByRole("heading", { name: "Airline technology platforms" })).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: "Mortgage loan origination" })).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: "Insurance products and operations" })).toBeInTheDocument();
   });
@@ -74,19 +74,19 @@ describe("Motitech", () => {
     }
   });
 
-  it("renders hire, contact, terms, and privacy", () => {
+  it("renders hire, contact, terms, and privacy", async () => {
     renderAt("/hire");
-    expect(screen.getByRole("heading", { name: "Work with me" })).toBeInTheDocument();
+    expect(await screen.findByRole("heading", { name: "Work with me" })).toBeInTheDocument();
 
     renderAt("/contact");
-    expect(screen.getByRole("button", { name: "Send an email" })).toBeDisabled();
+    expect(await screen.findByRole("button", { name: "Send an email" })).toBeDisabled();
     expect(screen.queryByRole("link", { name: "Send an email" })).not.toBeInTheDocument();
 
     renderAt("/terms");
-    expect(screen.getByRole("heading", { name: "Terms and conditions" })).toBeInTheDocument();
+    expect(await screen.findByRole("heading", { name: "Terms and conditions" })).toBeInTheDocument();
 
     renderAt("/privacy-policy");
-    expect(screen.getByRole("heading", { name: "Privacy policy" })).toBeInTheDocument();
+    expect(await screen.findByRole("heading", { name: "Privacy policy" })).toBeInTheDocument();
   });
 
   it("sends the contact form only after both agreements", async () => {
@@ -98,7 +98,7 @@ describe("Motitech", () => {
     vi.stubGlobal("fetch", fetchMock);
     renderAt("/contact");
 
-    expect(screen.getByRole("button", { name: "Send an email" })).toBeDisabled();
+    expect(await screen.findByRole("button", { name: "Send an email" })).toBeDisabled();
     await user.type(screen.getByRole("textbox", { name: "Name" }), "Ana Ruiz");
     await user.type(screen.getByRole("textbox", { name: "Email" }), "ana@example.com");
     await user.type(screen.getByRole("textbox", { name: "Message" }), "I need an API for a loan flow.");
@@ -116,21 +116,21 @@ describe("Motitech", () => {
     vi.unstubAllGlobals();
   });
 
-  it("explains an unknown address", () => {
+  it("explains an unknown address", async () => {
     renderAt("/missing");
-    expect(screen.getByRole("heading", { name: "This page does not exist" })).toBeInTheDocument();
+    expect(await screen.findByRole("heading", { name: "This page does not exist" })).toBeInTheDocument();
   });
 
   it("honors a language set in the address", () => {
     renderAt("/?lang=es");
-    expect(screen.getByRole("heading", { name: "Hola, bienvenido" })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: "Soy Jeysson Cárdenas" })).toBeInTheDocument();
   });
 
   it("follows the device language until the visitor picks one", () => {
     vi.spyOn(navigator, "languages", "get").mockReturnValue(["es-CO", "en-US"]);
     try {
       renderAt("/");
-      expect(screen.getByRole("heading", { name: "Hola, bienvenido" })).toBeInTheDocument();
+      expect(screen.getByRole("heading", { name: "Soy Jeysson Cárdenas" })).toBeInTheDocument();
       expect(localStorage.getItem("motitech-locale")).toBeNull();
     } finally {
       vi.restoreAllMocks();
@@ -142,7 +142,7 @@ describe("Motitech", () => {
     vi.spyOn(navigator, "languages", "get").mockReturnValue(["es-CO"]);
     try {
       renderAt("/");
-      expect(screen.getByRole("heading", { name: "Hello, welcome" })).toBeInTheDocument();
+      expect(screen.getByRole("heading", { name: "I'm Jeysson Cárdenas" })).toBeInTheDocument();
     } finally {
       vi.restoreAllMocks();
     }
