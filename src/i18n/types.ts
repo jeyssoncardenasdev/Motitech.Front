@@ -41,6 +41,8 @@ export interface Messages {
     openMenu: string;
     closeMenu: string;
     language: string;
+    themeToLight: string;
+    themeToDark: string;
   };
   hero: {
     greeting: string;

@@ -3,7 +3,7 @@ import { GITHUB_URL, LINKEDIN_URL } from "../../content/catalog";
 import { useI18n } from "../../i18n/LanguageProvider";
 
 const linkClass =
-  "inline-flex items-center gap-2 text-white hover:text-orange-400 transition";
+  "inline-flex items-center gap-2 text-ink hover:text-link transition";
 
 export default function SocialLinks() {
   const { messages } = useI18n();

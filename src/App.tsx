@@ -12,14 +12,16 @@ import NotFound from "./components/notFound/NotFound";
 import ScrollToTop from "./components/shared/ScrollToTop";
 import Seo from "./components/shared/Seo";
 import { LanguageProvider } from "./i18n/LanguageProvider";
+import { ThemeProvider } from "./theme/ThemeProvider";
 
 function App() {
   return (
+    <ThemeProvider>
     <LanguageProvider>
     <Router>
       <ScrollToTop />
       <Seo />
-      <div className="font-poppins min-h-screen flex flex-col bg-zinc-900 text-white">
+      <div className="font-poppins min-h-screen flex flex-col bg-canvas text-ink">
         <NavbarV1 />
         <main className="flex-1">
           <Routes>
@@ -37,6 +39,7 @@ function App() {
       </div>
     </Router>
     </LanguageProvider>
+    </ThemeProvider>
   );
 }
 

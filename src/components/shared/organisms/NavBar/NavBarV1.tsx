@@ -1,6 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 import { useState } from "react";
 import { useI18n } from "../../../../i18n/LanguageProvider";
+import { useTheme } from "../../../../theme/ThemeProvider";
 import type { Locale } from "../../../../i18n/types";
 
 const links = [
@@ -14,9 +15,10 @@ const links = [
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const { locale, setLocale, messages } = useI18n();
+  const { theme, setTheme } = useTheme();
 
   const itemClass = ({ isActive }: { isActive: boolean }) =>
-    isActive ? "text-orange-400" : "text-white hover:text-orange-400";
+    isActive ? "text-link" : "text-ink hover:text-link";
 
   const switchLanguage = (next: Locale) => {
     setLocale(next);
@@ -24,7 +26,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="bg-zinc-800 text-white sticky top-0 z-50 shadow-md" aria-label="Main">
+    <nav className="bg-surface text-ink sticky top-0 z-50 shadow-md" aria-label="Main">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-4 gap-4">
         <Link to="/" className="text-2xl shrink-0">
           Motitech
@@ -38,22 +40,38 @@ export default function Navbar() {
           ))}
         </div>
 
-        <LanguageSwitch
-          locale={locale}
-          label={messages.nav.language}
-          onChange={switchLanguage}
-          className="hidden lg:flex"
-        />
+        <div className="hidden lg:flex items-center gap-3">
+          <ThemeSwitch
+            light={theme === "light"}
+            toLight={messages.nav.themeToLight}
+            toDark={messages.nav.themeToDark}
+            onToggle={() => setTheme(theme === "light" ? "dark" : "light")}
+          />
+          <LanguageSwitch
+            locale={locale}
+            label={messages.nav.language}
+            onChange={switchLanguage}
+            className="flex"
+          />
+        </div>
 
-        <button
-          type="button"
-          className="lg:hidden text-2xl px-2 min-h-11 min-w-11"
-          aria-expanded={isOpen}
-          aria-label={isOpen ? messages.nav.closeMenu : messages.nav.openMenu}
-          onClick={() => setIsOpen((open) => !open)}
-        >
-          {isOpen ? "✕" : "☰"}
-        </button>
+        <div className="flex lg:hidden items-center gap-2">
+          <ThemeSwitch
+            light={theme === "light"}
+            toLight={messages.nav.themeToLight}
+            toDark={messages.nav.themeToDark}
+            onToggle={() => setTheme(theme === "light" ? "dark" : "light")}
+          />
+          <button
+            type="button"
+            className="text-2xl px-2 min-h-11 min-w-11"
+            aria-expanded={isOpen}
+            aria-label={isOpen ? messages.nav.closeMenu : messages.nav.openMenu}
+            onClick={() => setIsOpen((open) => !open)}
+          >
+            {isOpen ? "✕" : "☰"}
+          </button>
+        </div>
       </div>
 
       {isOpen && (
@@ -81,6 +99,30 @@ export default function Navbar() {
   );
 }
 
+function ThemeSwitch({
+  light,
+  toLight,
+  toDark,
+  onToggle,
+}: {
+  light: boolean;
+  toLight: string;
+  toDark: string;
+  onToggle: () => void;
+}) {
+  return (
+    <button
+      type="button"
+      aria-pressed={light}
+      aria-label={light ? toDark : toLight}
+      onClick={onToggle}
+      className="min-h-11 min-w-11 rounded-md border border-line text-sm text-ink"
+    >
+      {light ? "☾" : "☀"}
+    </button>
+  );
+}
+
 function LanguageSwitch({
   locale,
   label,
@@ -93,7 +135,7 @@ function LanguageSwitch({
   className: string;
 }) {
   return (
-    <div className={`${className} items-center gap-1 bg-zinc-700 rounded-md p-1`} role="group" aria-label={label}>
+    <div className={`${className} items-center gap-1 bg-raised rounded-md p-1`} role="group" aria-label={label}>
       <LangButton active={locale === "en"} onClick={() => onChange("en")}>
         EN
       </LangButton>
@@ -118,7 +160,7 @@ function LangButton({
       type="button"
       aria-pressed={active}
       onClick={onClick}
-      className={`px-2 py-1 text-sm rounded ${active ? "bg-orange-400 text-zinc-900" : "text-white"}`}
+      className={`px-2 py-1 text-sm rounded ${active ? "bg-brand text-brand-ink" : "text-ink"}`}
     >
       {children}
     </button>

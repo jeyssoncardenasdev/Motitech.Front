@@ -1,19 +1,75 @@
 @import "tailwindcss";
 
-@theme {
+@theme inline {
   --font-poppins: "Poppins", "Montserrat", sans-serif;
+  --color-canvas: var(--canvas);
+  --color-surface: var(--surface);
+  --color-raised: var(--raised);
+  --color-chip: var(--chip);
+  --color-footer: var(--footer);
+  --color-line: var(--line);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-faint: var(--faint);
+  --color-dot: var(--dot);
+  --color-brand: var(--brand);
+  --color-brand-hover: var(--brand-hover);
+  --color-brand-ink: var(--brand-ink);
+  --color-link: var(--link);
+  --color-link-hover: var(--link-hover);
+}
+
+/* Dark is the default. Light overrides the same tokens. */
+:root {
+  color-scheme: dark;
+  --canvas: #18181b;
+  --surface: #27272a;
+  --raised: #3f3f46;
+  --chip: #52525b;
+  --footer: #09090b;
+  --line: #52525b;
+  --ink: #ffffff;
+  --muted: #cbd5e1;
+  --faint: #94a3b8;
+  --dot: #71717a;
+  --brand: #fb923c;
+  --brand-hover: #f97316;
+  --brand-ink: #18181b;
+  --link: #fb923c;
+  --link-hover: #fdba74;
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+  --canvas: #fafafa;
+  --surface: #f4f4f5;
+  --raised: #ffffff;
+  --chip: #e4e4e7;
+  --footer: #f4f4f5;
+  --line: #d4d4d8;
+  --ink: #18181b;
+  --muted: #3f3f46;
+  --faint: #71717a;
+  --dot: #d4d4d8;
+  --link: #c2410c;
+  --link-hover: #9a3412;
 }
 
 @layer base {
   html,
   body,
   #root {
-    background-color: #18181b;
+    background-color: var(--canvas);
+    color: var(--ink);
     min-height: 100vh;
     overflow-x: clip;
   }
 
   img {
     max-width: 100%;
+  }
+
+  [data-theme="light"] img[data-mark="cursor"] {
+    filter: invert(1);
   }
 }

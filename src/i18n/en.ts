@@ -54,6 +54,8 @@ export const en: Messages = {
     openMenu: "Open menu",
     closeMenu: "Close menu",
     language: "Language",
+    themeToLight: "Switch to light mode",
+    themeToDark: "Switch to dark mode",
   },
   hero: {
     greeting: "Hello, welcome",

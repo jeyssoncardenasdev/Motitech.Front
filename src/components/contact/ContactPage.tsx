@@ -56,13 +56,13 @@ const ContactPage = () => {
   };
 
   return (
-    <div className="bg-zinc-900 text-white min-h-[70vh]">
+    <div className="bg-canvas text-ink min-h-[70vh]">
       <div className="max-w-3xl mx-auto px-4 py-16 sm:py-20">
         <h1 className="text-3xl sm:text-4xl font-bold mb-4 text-center">{contact.title}</h1>
-        <p className="text-slate-300 mb-4 text-center">{contact.intro}</p>
-        <p className="text-slate-300 mb-8 text-center">{contact.pageIntro}</p>
+        <p className="text-muted mb-4 text-center">{contact.intro}</p>
+        <p className="text-muted mb-8 text-center">{contact.pageIntro}</p>
 
-        <form className="bg-zinc-800 p-5 sm:p-8 space-y-5 text-left" onSubmit={onSubmit}>
+        <form className="bg-surface p-5 sm:p-8 space-y-5 text-left" onSubmit={onSubmit}>
           <label className="block">
             <span className="block mb-1">{contact.nameLabel}</span>
             <input
@@ -71,7 +71,7 @@ const ContactPage = () => {
               autoComplete="name"
               value={name}
               onChange={(event) => setName(event.target.value)}
-              className="w-full bg-zinc-900 border border-zinc-600 px-3 py-2"
+              className="w-full bg-canvas border border-line px-3 py-2"
             />
           </label>
           <label className="block">
@@ -83,7 +83,7 @@ const ContactPage = () => {
               autoComplete="email"
               value={email}
               onChange={(event) => setEmail(event.target.value)}
-              className="w-full bg-zinc-900 border border-zinc-600 px-3 py-2"
+              className="w-full bg-canvas border border-line px-3 py-2"
             />
           </label>
           <div>
@@ -99,12 +99,12 @@ const ContactPage = () => {
               value={message}
               onChange={(event) => setMessage(event.target.value)}
               aria-describedby="message-limit"
-              className="w-full bg-zinc-900 border border-zinc-600 px-3 py-2"
+              className="w-full bg-canvas border border-line px-3 py-2"
             />
             <p
               id="message-limit"
               className={`mt-2 flex justify-between gap-3 text-sm ${
-                message.trim().length >= MESSAGE_MIN ? "text-slate-400" : "text-orange-300"
+                message.trim().length >= MESSAGE_MIN ? "text-faint" : "text-link"
               }`}
             >
               <span>{contact.messageHint}</span>
@@ -126,7 +126,7 @@ const ContactPage = () => {
           <label className="flex gap-3 items-start">
             <input
               type="checkbox"
-              className="mt-1 h-5 w-5 shrink-0 accent-orange-400"
+              className="mt-1 h-5 w-5 shrink-0 accent-brand"
               checked={acceptsMethod}
               onChange={(event) => setAcceptsMethod(event.target.checked)}
             />
@@ -136,13 +136,13 @@ const ContactPage = () => {
           <label className="flex gap-3 items-start">
             <input
               type="checkbox"
-              className="mt-1 h-5 w-5 shrink-0 accent-orange-400"
+              className="mt-1 h-5 w-5 shrink-0 accent-brand"
               checked={acceptsTerms}
               onChange={(event) => setAcceptsTerms(event.target.checked)}
             />
             <span>
               {contact.termsConsentLead}{" "}
-              <Link to="/terms" className="text-orange-400 hover:text-orange-300 underline">
+              <Link to="/terms" className="text-link hover:text-link-hover underline">
                 {contact.termsConsentLink}
               </Link>
               .
@@ -153,20 +153,20 @@ const ContactPage = () => {
             <button
               type="submit"
               disabled={!ready || status === "sending" || cooldownMs > 0}
-              className="bg-orange-400 disabled:bg-zinc-600 disabled:text-zinc-300 disabled:cursor-not-allowed text-zinc-900 font-bold py-3 px-8"
+              className="bg-brand disabled:bg-chip disabled:text-muted disabled:cursor-not-allowed text-brand-ink font-bold py-3 px-8"
             >
               {status === "sending" ? contact.sending : contact.emailCta}
             </button>
           </div>
           {cooldownMs > 0 && (
-            <p className="text-sm text-orange-300">
+            <p className="text-sm text-link">
               {contact.cooldown.replace("{minutes}", String(Math.max(1, Math.ceil(cooldownMs / 60000))))}
             </p>
           )}
           {!ready && status !== "sent" && cooldownMs === 0 && (
-            <p className="text-sm text-slate-400">{contact.blockedHint}</p>
+            <p className="text-sm text-faint">{contact.blockedHint}</p>
           )}
-          {status === "sent" && <p className="text-xs text-slate-400">{contact.success}</p>}
+          {status === "sent" && <p className="text-xs text-faint">{contact.success}</p>}
           {status === "error" && <p className="text-red-300">{failure || contact.error}</p>}
         </form>
 

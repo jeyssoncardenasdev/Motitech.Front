@@ -17,7 +17,7 @@ const Hero = () => {
           {messages.hero.greeting}
         </motion.h1>
         <motion.p
-          className="text-3xl sm:text-5xl md:text-6xl font-bold mb-4 text-orange-400"
+          className="text-3xl sm:text-5xl md:text-6xl font-bold mb-4 text-link"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3, duration: 0.6 }}
@@ -25,7 +25,7 @@ const Hero = () => {
           {messages.hero.name}
         </motion.p>
         <motion.p
-          className="text-xl md:text-2xl text-slate-300 mb-4"
+          className="text-xl md:text-2xl text-muted mb-4"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5, duration: 0.6 }}
@@ -33,7 +33,7 @@ const Hero = () => {
           {messages.hero.role}
         </motion.p>
         <motion.p
-          className="text-lg text-slate-300 mb-8 max-w-2xl mx-auto"
+          className="text-lg text-muted mb-8 max-w-2xl mx-auto"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.7, duration: 0.6 }}
@@ -47,7 +47,7 @@ const Hero = () => {
         >
           <Link
             to="/contact"
-            className="bg-orange-400 hover:bg-orange-500 text-zinc-900 font-bold py-3 px-8 inline-block"
+            className="bg-brand hover:bg-brand-hover text-brand-ink font-bold py-3 px-8 inline-block"
           >
             {messages.hero.cta}
           </Link>
@@ -55,7 +55,7 @@ const Hero = () => {
       </div>
       <a
         href="#technologies"
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-slate-400 hover:text-white animate-bounce"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-faint hover:text-ink animate-bounce"
         aria-label={messages.hero.scroll}
       >
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">

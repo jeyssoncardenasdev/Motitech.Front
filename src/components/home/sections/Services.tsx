@@ -30,11 +30,11 @@ const Services = () => {
   }, [paused, items.length, currentIndex]);
 
   return (
-    <section id="services" className="py-16 bg-zinc-900" aria-roledescription="carousel">
+    <section id="services" className="py-16 bg-canvas" aria-roledescription="carousel">
       <div className="max-w-4xl mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">{messages.services.title}</h2>
         <div
-          className="bg-zinc-700"
+          className="bg-raised"
           onPointerEnter={(event) => {
             if (event.pointerType === "mouse") setHeld(true);
           }}
@@ -46,10 +46,10 @@ const Services = () => {
             if (!event.currentTarget.contains(event.relatedTarget)) setHeld(false);
           }}
         >
-          <div className="flex items-center gap-1 sm:gap-3 bg-zinc-900 px-1 sm:px-3">
+          <div className="flex items-center gap-1 sm:gap-3 bg-canvas px-1 sm:px-3">
             <button
               type="button"
-              className="shrink-0 text-zinc-300 hover:text-orange-400 p-1"
+              className="shrink-0 text-muted hover:text-link p-1"
               onClick={() => go(currentIndex - 1)}
               aria-label={messages.services.previous}
             >
@@ -73,7 +73,7 @@ const Services = () => {
             </div>
             <button
               type="button"
-              className="shrink-0 text-zinc-300 hover:text-orange-400 p-1"
+              className="shrink-0 text-muted hover:text-link p-1"
               onClick={() => go(currentIndex + 1)}
               aria-label={messages.services.next}
             >
@@ -83,8 +83,8 @@ const Services = () => {
             </button>
           </div>
           <div className="p-4 sm:p-6 text-center">
-            <h3 className="text-xl sm:text-2xl font-semibold mb-3 text-orange-400">{current.title}</h3>
-            <p className="text-slate-200">{current.description}</p>
+            <h3 className="text-xl sm:text-2xl font-semibold mb-3 text-link">{current.title}</h3>
+            <p className="text-muted">{current.description}</p>
           </div>
         </div>
         <div className="flex justify-center items-center mt-4 gap-4">
@@ -93,7 +93,7 @@ const Services = () => {
               <button
                 key={item.title}
                 type="button"
-                className={`h-2.5 w-2.5 rounded-full ${index === currentIndex ? "bg-orange-400" : "bg-zinc-500"}`}
+                className={`h-2.5 w-2.5 rounded-full ${index === currentIndex ? "bg-brand" : "bg-dot"}`}
                 onClick={() => setCurrentIndex(index)}
                 aria-label={`${messages.services.goTo} ${index + 1}`}
                 aria-current={index === currentIndex}
@@ -102,7 +102,7 @@ const Services = () => {
           </div>
           <button
             type="button"
-            className="text-sm text-slate-300 hover:text-white"
+            className="text-sm text-muted hover:text-ink"
             onClick={() => setManualPause((value) => !value)}
             aria-pressed={manualPause}
           >

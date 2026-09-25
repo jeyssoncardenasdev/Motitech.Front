@@ -5,13 +5,13 @@ const Contact = () => {
   const { messages } = useI18n();
 
   return (
-    <section id="contact" className="py-20 bg-zinc-900">
+    <section id="contact" className="py-20 bg-canvas">
       <div className="max-w-3xl mx-auto px-4 text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-6">{messages.contact.title}</h2>
-        <p className="text-xl text-slate-300 mb-10">{messages.contact.intro}</p>
+        <p className="text-xl text-muted mb-10">{messages.contact.intro}</p>
         <Link
           to="/contact"
-          className="bg-orange-400 hover:bg-orange-500 text-zinc-900 font-bold py-3 px-8 inline-block"
+          className="bg-brand hover:bg-brand-hover text-brand-ink font-bold py-3 px-8 inline-block"
         >
           {messages.contact.emailCta}
         </Link>

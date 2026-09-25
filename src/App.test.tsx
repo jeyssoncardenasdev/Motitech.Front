@@ -15,6 +15,16 @@ describe("Motitech", () => {
     localStorage.clear();
   });
 
+  it("starts dark and switches to light", async () => {
+    const user = userEvent.setup();
+    renderAt("/");
+    expect(document.documentElement.dataset.theme).toBeUndefined();
+    await user.click(screen.getAllByRole("button", { name: "Switch to light mode" })[0]);
+    expect(document.documentElement.dataset.theme).toBe("light");
+    await user.click(screen.getAllByRole("button", { name: "Switch to dark mode" })[0]);
+    expect(document.documentElement.dataset.theme).toBeUndefined();
+  });
+
   it("opens the home page in English", () => {
     renderAt("/");
     expect(screen.getByRole("heading", { name: "Hello, welcome" })).toBeInTheDocument();

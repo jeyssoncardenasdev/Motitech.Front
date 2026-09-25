@@ -8,7 +8,7 @@ import Socials from "./sections/Socials";
 
 const Home = () => {
   return (
-    <div className="bg-zinc-900 text-white min-h-screen">
+    <div className="bg-canvas text-ink min-h-screen">
       <Hero />
       <Technologies />
       <Methodology />
