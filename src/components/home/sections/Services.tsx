@@ -1,5 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { serviceBanners } from "../../../content/catalog";
 import { useI18n } from "../../../i18n/LanguageProvider";
 import SectionHeading from "../../shared/SectionHeading";
@@ -110,6 +111,11 @@ const Services = () => {
             {manualPause ? messages.services.resume : messages.services.pause}
           </button>
         </div>
+        <p className="mt-8 text-center">
+          <Link to="/hire#rates" className="text-link hover:text-link-hover">
+            {messages.services.ratesCta}
+          </Link>
+        </p>
       </div>
     </section>
   );

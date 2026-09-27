@@ -77,6 +77,9 @@ describe("Motitech", () => {
   it("renders hire, contact, terms, and privacy", async () => {
     renderAt("/hire");
     expect(await screen.findByRole("heading", { name: "Work with me" })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: "Starting at $40/hour" })).toBeInTheDocument();
+    expect(screen.getByText("Senior backend/UI development")).toBeInTheDocument();
+    expect(screen.getByText(/All analysis is billed/)).toBeInTheDocument();
 
     renderAt("/contact");
     expect(await screen.findByRole("button", { name: "Send an email" })).toBeDisabled();

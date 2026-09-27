@@ -19,7 +19,7 @@ export const en: Messages = {
       hire: {
         title: "Hire | Motitech — Jeysson Cárdenas",
         description:
-          "Freelance engagements for APIs, cloud migration, legacy maintenance, and spec-driven delivery with Cursor and Claude Code.",
+          "Freelance work starting at $40/hour for APIs, cloud, legacy maintenance, and backend or UI. Final price depends on the project.",
       },
       works: {
         title: "Projects | Motitech — Jeysson Cárdenas",
@@ -162,6 +162,7 @@ export const en: Messages = {
     goTo: "Go to service",
     pause: "Pause",
     resume: "Resume",
+    ratesCta: "Starting at $40/hour",
     items: [
       {
         title: "APIs and microservices",
@@ -488,6 +489,29 @@ export const en: Messages = {
     ],
     termsLink: "Read the full terms",
     cta: "Start a conversation",
+    ratesEyebrow: "Rates",
+    ratesLead: "Starting at $40/hour",
+    ratesIntro:
+      "Final pricing depends on project complexity, scope, technology and engagement model.",
+    rates: [
+      { name: "Development and maintenance", price: "From $40/hour*" },
+      { name: "Senior backend/UI development", price: "From $45/hour*" },
+      { name: "Architecture and technical consulting", price: "From $55/hour*" },
+      { name: "Cloud and DevOps consulting", price: "From $55/hour*" },
+      { name: "Technical discovery", price: "From $50/hour*" },
+      { name: "Urgent or after-hours support", price: "From $65/hour*" },
+    ],
+    ratesNote: "* A starting point, not a fixed rate. It can change with the project.",
+    ratesAnalysis:
+      "** All analysis is billed, including discovery, a system review, and the time spent understanding the project.",
+    packagesTitle: "Hour packs",
+    packagesIntro: "A larger block of hours includes a small discount.",
+    packages: [
+      { name: "20 hours", price: "$850" },
+      { name: "40 hours", price: "$1,600" },
+      { name: "80 hours", price: "$3,000" },
+      { name: "Custom project", price: "Let's discuss" },
+    ],
   },
   legal: {
     updated: "Last updated",

@@ -19,7 +19,7 @@ export const es: Messages = {
       hire: {
         title: "Contratación | Motitech — Jeysson Cárdenas",
         description:
-          "Encargos freelance de APIs, migración a la nube, mantenimiento de legado y entrega dirigida por especificación con Cursor y Claude Code.",
+          "Trabajo freelance desde $40/hora para APIs, nube, mantenimiento de legado y backend o UI. El precio final depende del proyecto.",
       },
       works: {
         title: "Proyectos | Motitech — Jeysson Cárdenas",
@@ -162,6 +162,7 @@ export const es: Messages = {
     goTo: "Ir al servicio",
     pause: "Pausar",
     resume: "Reanudar",
+    ratesCta: "Desde $40/hora",
     items: [
       {
         title: "APIs y microservicios",
@@ -494,6 +495,29 @@ export const es: Messages = {
     ],
     termsLink: "Leer los términos completos",
     cta: "Empezar una conversación",
+    ratesEyebrow: "Tarifas",
+    ratesLead: "Desde $40/hora",
+    ratesIntro:
+      "El precio final depende de la complejidad del proyecto, el alcance, la tecnología y la forma de contratación.",
+    rates: [
+      { name: "Desarrollo y mantenimiento", price: "Desde $40/hora*" },
+      { name: "Desarrollo backend/UI senior", price: "Desde $45/hora*" },
+      { name: "Arquitectura y consultoría técnica", price: "Desde $55/hora*" },
+      { name: "Consultoría de nube y DevOps", price: "Desde $55/hora*" },
+      { name: "Descubrimiento técnico", price: "Desde $50/hora*" },
+      { name: "Soporte urgente o fuera de horario", price: "Desde $65/hora*" },
+    ],
+    ratesNote: "* Es el punto de partida, no una tarifa fija. Puede variar según el proyecto.",
+    ratesAnalysis:
+      "** Todo análisis se cobra, incluido el diagnóstico, la revisión del sistema y el tiempo para entender el proyecto.",
+    packagesTitle: "Paquetes de horas",
+    packagesIntro: "Un bloque más grande de horas incluye un descuento pequeño.",
+    packages: [
+      { name: "20 horas", price: "$850" },
+      { name: "40 horas", price: "$1,600" },
+      { name: "80 horas", price: "$3,000" },
+      { name: "Proyecto a medida", price: "Lo conversamos" },
+    ],
   },
   legal: {
     updated: "Última actualización",

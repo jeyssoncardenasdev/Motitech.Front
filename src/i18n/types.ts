@@ -73,6 +73,7 @@ export interface Messages {
     goTo: string;
     pause: string;
     resume: string;
+    ratesCta: string;
     items: { title: string; description: string }[];
   };
   projects: {
@@ -132,6 +133,15 @@ export interface Messages {
     commercial: string[];
     termsLink: string;
     cta: string;
+    ratesEyebrow: string;
+    ratesLead: string;
+    ratesIntro: string;
+    rates: { name: string; price: string }[];
+    ratesNote: string;
+    ratesAnalysis: string;
+    packagesTitle: string;
+    packagesIntro: string;
+    packages: { name: string; price: string }[];
   };
   legal: {
     updated: string;

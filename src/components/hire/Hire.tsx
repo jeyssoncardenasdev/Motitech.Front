@@ -27,6 +27,36 @@ const Hire = () => {
           </ul>
         </section>
 
+        <section id="rates" className="scroll-mt-24">
+          <p className="mb-3 text-sm uppercase tracking-[0.16em] text-faint">{hire.ratesEyebrow}</p>
+          <h2 className="text-2xl font-semibold mb-3">{hire.ratesLead}</h2>
+          <p className="text-muted mb-6">{hire.ratesIntro}</p>
+          <ul className="grid gap-2">
+            {hire.rates.map((rate) => (
+              <li
+                key={rate.name}
+                className="flex flex-col gap-1 bg-surface px-5 py-4 sm:flex-row sm:items-baseline sm:justify-between"
+              >
+                <span>{rate.name}</span>
+                <span className="shrink-0 font-semibold">{rate.price}</span>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-4 text-xs text-faint">{hire.ratesNote}</p>
+          <p className="mt-2 text-xs text-faint">{hire.ratesAnalysis}</p>
+
+          <h3 className="mt-10 mb-2 text-xl font-semibold">{hire.packagesTitle}</h3>
+          <p className="text-muted mb-4">{hire.packagesIntro}</p>
+          <ul className="grid gap-2 sm:grid-cols-2">
+            {hire.packages.map((pack) => (
+              <li key={pack.name} className="bg-surface px-5 py-4">
+                <p className="text-sm uppercase tracking-[0.16em] text-faint">{pack.name}</p>
+                <p className="mt-1 text-xl font-semibold">{pack.price}</p>
+              </li>
+            ))}
+          </ul>
+        </section>
+
         <section>
           <h2 className="text-2xl font-semibold mb-4">{hire.processTitle}</h2>
           <ol className="space-y-3">
