@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import portrait from "../../../assets/images/profile/jeysson.png";
 import { formatToday } from "../../../i18n/formatToday";
 import { useI18n } from "../../../i18n/LanguageProvider";
 
@@ -15,9 +16,13 @@ const AboutMe = () => {
         transition={{ duration: 0.6 }}
       >
         <div className="text-center">
-          <p className="mx-auto mb-6 flex h-36 w-36 items-center justify-center rounded-full bg-brand text-4xl font-bold text-brand-ink">
-            JC
-          </p>
+          <img
+            src={portrait}
+            alt={about.name}
+            width={1024}
+            height={1021}
+            className="mx-auto mb-6 aspect-square w-full max-w-xs object-cover object-top"
+          />
           <p className="text-muted">{about.title}</p>
         </div>
       </motion.div>

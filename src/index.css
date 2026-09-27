@@ -78,13 +78,17 @@
 }
 
 @layer base {
-  html,
+  html {
+    background-color: var(--canvas);
+    color: var(--ink);
+    overflow-x: clip;
+  }
+
   body,
   #root {
     background-color: var(--canvas);
     color: var(--ink);
     min-height: 100vh;
-    overflow-x: clip;
   }
 
   img {

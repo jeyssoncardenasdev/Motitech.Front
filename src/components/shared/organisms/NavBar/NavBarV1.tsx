@@ -1,5 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import { useEffect, useRef, useState, type KeyboardEvent as ReactKeyboardEvent } from "react";
+import { createPortal } from "react-dom";
 import { useI18n } from "../../../../i18n/LanguageProvider";
 import { useTheme } from "../../../../theme/ThemeProvider";
 import type { Locale } from "../../../../i18n/types";
@@ -14,6 +15,7 @@ const links = [
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [barBottom, setBarBottom] = useState(0);
   const navRef = useRef<HTMLElement>(null);
   const panelRef = useRef<HTMLDivElement>(null);
   const { locale, setLocale, messages } = useI18n();
@@ -21,14 +23,39 @@ export default function Navbar() {
 
   useEffect(() => {
     if (!isOpen) return;
-    const previousOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
+    const lockedY = window.scrollY;
+    const place = () => {
+      const bottom = navRef.current?.getBoundingClientRect().bottom ?? 0;
+      setBarBottom(Math.max(0, bottom));
+    };
+    const lockScroll = () => {
+      if (window.scrollY !== lockedY) window.scrollTo(0, lockedY);
+      place();
+    };
+    const stopGesture = (event: Event) => {
+      const panel = panelRef.current;
+      const insidePanel =
+        event.target instanceof Node && panel?.contains(event.target) && panel.scrollHeight > panel.clientHeight + 1;
+      if (insidePanel) return;
+      event.preventDefault();
+    };
     const onKey = (event: globalThis.KeyboardEvent) => {
       if (event.key === "Escape") setIsOpen(false);
+      const scrolls = event.key === "ArrowUp" || event.key === "ArrowDown" || event.key === "PageUp" || event.key === "PageDown" || event.key === "Home" || event.key === "End" || event.key === " ";
+      const onControl = event.target instanceof HTMLElement && event.target.closest("a, button");
+      if (scrolls && !onControl) event.preventDefault();
     };
+    place();
+    window.addEventListener("scroll", lockScroll);
+    window.addEventListener("resize", place);
+    document.addEventListener("wheel", stopGesture, { passive: false, capture: true });
+    document.addEventListener("touchmove", stopGesture, { passive: false, capture: true });
     window.addEventListener("keydown", onKey);
     return () => {
-      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("scroll", lockScroll);
+      window.removeEventListener("resize", place);
+      document.removeEventListener("wheel", stopGesture, { capture: true });
+      document.removeEventListener("touchmove", stopGesture, { capture: true });
       window.removeEventListener("keydown", onKey);
     };
   }, [isOpen]);
@@ -90,19 +117,26 @@ export default function Navbar() {
             aria-expanded={isOpen}
             aria-controls="mobile-menu"
             aria-label={isOpen ? messages.nav.closeMenu : messages.nav.openMenu}
-            onClick={() => setIsOpen((open) => !open)}
+            onClick={() => {
+              if (!isOpen) {
+                const bottom = navRef.current?.getBoundingClientRect().bottom ?? 0;
+                setBarBottom(Math.max(0, bottom));
+              }
+              setIsOpen((open) => !open);
+            }}
           >
             {isOpen ? "✕" : "☰"}
           </button>
         </div>
       </div>
 
-      {isOpen && (
+      {isOpen &&
+        createPortal(
         <div className="lg:hidden">
           <button
             type="button"
             className="fixed right-0 bottom-0 left-0 z-40 bg-black/50"
-            style={{ top: navRef.current?.offsetHeight ?? 0 }}
+            style={{ top: barBottom }}
             aria-label={messages.nav.closeMenu}
             tabIndex={-1}
             onClick={() => setIsOpen(false)}
@@ -113,8 +147,11 @@ export default function Navbar() {
             role="dialog"
             aria-modal="true"
             aria-label={messages.nav.menu}
-            className="drawer-panel fixed right-0 bottom-0 z-50 flex w-64 max-w-[75vw] flex-col bg-surface px-6 py-8 shadow-md"
-            style={{ top: navRef.current?.offsetHeight ?? 0 }}
+            className="drawer-panel fixed right-0 z-40 flex w-64 max-w-[75vw] flex-col overflow-y-auto bg-surface px-6 py-8 shadow-md"
+            style={{
+              top: barBottom,
+              height: `calc(100dvh - ${barBottom}px)`,
+            }}
             onKeyDown={(event) => keepFocusInside(event, panelRef.current)}
           >
             <div className="flex flex-col gap-1">
@@ -133,8 +170,9 @@ export default function Navbar() {
               ))}
             </div>
           </div>
-        </div>
-      )}
+        </div>,
+          document.body,
+        )}
     </nav>
   );
 }
