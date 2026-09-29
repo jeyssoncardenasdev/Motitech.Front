@@ -150,6 +150,8 @@ const ContactPage = () => {
             </span>
           </label>
 
+          <p className="text-xs text-faint">{contact.whatsappNote}</p>
+
           <div className="flex justify-center">
             <button
               type="submit"

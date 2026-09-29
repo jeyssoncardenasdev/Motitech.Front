@@ -97,6 +97,7 @@ export interface Messages {
     methodConsent: string;
     termsConsentLead: string;
     termsConsentLink: string;
+    whatsappNote: string;
     blockedHint: string;
     cooldown: string;
     sending: string;
@@ -151,5 +152,6 @@ export interface Messages {
     privacy: { heading: string; paragraphs: string[] }[];
   };
   footer: { rights: string; builtWithAi: string; terms: string; privacy: string };
+  whatsapp: { label: string; defaultMessage: string };
   notFound: { title: string; body: string; cta: string };
 }

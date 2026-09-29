@@ -2,6 +2,7 @@ import { lazy, Suspense } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./components/home/Home";
 import NavbarV1 from "./components/shared/organisms/NavBar/NavBarV1";
+import WhatsAppButton from "./components/shared/WhatsAppButton";
 import Footer from "./components/shared/organisms/Footer/Footer";
 import ScrollToTop from "./components/shared/ScrollToTop";
 import Seo from "./components/shared/Seo";
@@ -25,6 +26,7 @@ function App() {
       <Seo />
       <div className="font-poppins min-h-screen flex flex-col bg-canvas text-ink">
         <NavbarV1 />
+        <WhatsAppButton />
         <main className="flex-1">
           <Suspense fallback={null}>
             <Routes>

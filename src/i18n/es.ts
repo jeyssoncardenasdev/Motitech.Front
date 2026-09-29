@@ -251,6 +251,7 @@ export const es: Messages = {
       "Acepto trabajar con desarrollo asistido por IA (vibe coding) usando plataformas como Cursor y Claude Code, y con desarrollo dirigido por especificación (SDD).",
     termsConsentLead: "He leído y acepto los",
     termsConsentLink: "términos y condiciones",
+    whatsappNote: "Contactar por WhatsApp también significa que aceptas estos términos.",
     blockedHint: "Nombre, correo, mensaje y las dos casillas son obligatorios antes de enviar.",
     cooldown: "Ya enviaste un mensaje. Puedes enviar otro en {minutes} min.",
     sending: "Enviando…",
@@ -642,6 +643,10 @@ export const es: Messages = {
     builtWithAi: "Este sitio fue construido con ayuda de IA.",
     terms: "Términos y condiciones",
     privacy: "Política de privacidad",
+  },
+  whatsapp: {
+    label: "Contactar por WhatsApp",
+    defaultMessage: "Hola, vi tu portafolio y me interesa trabajar juntos.",
   },
   notFound: {
     title: "Esta página no existe",

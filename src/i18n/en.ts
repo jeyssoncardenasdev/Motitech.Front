@@ -251,6 +251,7 @@ export const en: Messages = {
       "I agree to work with AI-assisted development (vibe coding) using platforms such as Cursor and Claude Code, and with Spec-Driven Development (SDD).",
     termsConsentLead: "I have read and accept the",
     termsConsentLink: "terms and conditions",
+    whatsappNote: "Contacting via WhatsApp also means you accept these terms.",
     blockedHint: "Name, email, message, and both boxes are required before sending.",
     cooldown: "You already sent a message. You can send another in {minutes} min.",
     sending: "Sending…",
@@ -636,6 +637,10 @@ export const en: Messages = {
     builtWithAi: "This site was built with the help of AI.",
     terms: "Terms and conditions",
     privacy: "Privacy policy",
+  },
+  whatsapp: {
+    label: "Contact via WhatsApp",
+    defaultMessage: "Hi, I saw your portfolio and I'm interested in working together.",
   },
   notFound: {
     title: "This page does not exist",
