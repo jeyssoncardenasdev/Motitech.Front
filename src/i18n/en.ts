@@ -596,6 +596,8 @@ export const en: Messages = {
         heading: "Acceptance",
         paragraphs: [
           "By accepting a proposal, paying the advance, or starting a service, the Client accepts these terms.",
+          "Opening the WhatsApp link on this site and sending a message also means you accept these terms, in the same way as agreeing on the contact form.",
+          "A WhatsApp chat does not replace a written proposal. Scope, price, and dates are still agreed in writing before work starts.",
         ],
       },
     ],
@@ -622,6 +624,7 @@ export const en: Messages = {
         heading: "When you write to me",
         paragraphs: [
           "The contact form sends your name, email address, and message through Formspree, which forwards them to jeysson.cardenas.rojas@outlook.com. I use that information only to answer and, if we agree, to deliver the service. I do not sell it. I delete a contact message from my inbox when you ask, unless I must keep it for a legal or accounting duty.",
+          "The home page may show a WhatsApp button. It opens WhatsApp (wa.me) on your device or in your browser. Meta Platforms processes that conversation under WhatsApp’s own terms and privacy policy. This site does not receive or store WhatsApp messages on its servers. The link may include a short prefilled message; you can edit it before you send. I use WhatsApp messages only to reply and, if we agree, to deliver the service. I do not sell them.",
         ],
       },
       {

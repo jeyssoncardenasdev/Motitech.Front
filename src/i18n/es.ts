@@ -602,6 +602,8 @@ export const es: Messages = {
         heading: "Aceptación",
         paragraphs: [
           "Al aceptar una propuesta, pagar el anticipo o iniciar un servicio, el Cliente acepta estos términos.",
+          "Abrir el enlace de WhatsApp en este sitio y enviar un mensaje también significa que aceptas estos términos, igual que al marcar los acuerdos en el formulario de contacto.",
+          "Un chat por WhatsApp no sustituye una propuesta escrita. El alcance, el precio y las fechas se acuerdan por escrito antes de iniciar el trabajo.",
         ],
       },
     ],
@@ -628,6 +630,7 @@ export const es: Messages = {
         heading: "Cuando me escribes",
         paragraphs: [
           "El formulario de contacto envía tu nombre, tu correo y el mensaje a través de Formspree, que los reenvía a jeysson.cardenas.rojas@outlook.com. Uso esa información solo para responder y, si acordamos un servicio, para ejecutarlo. No la vendo. Borro un mensaje de contacto de mi bandeja cuando me lo pides, salvo que deba conservarlo por un deber legal o contable.",
+          "En la página de inicio puede aparecer un botón de WhatsApp. Abre WhatsApp (wa.me) en tu dispositivo o en el navegador. Meta Platforms trata esa conversación según los términos y la política de privacidad propios de WhatsApp. Este sitio no recibe ni guarda mensajes de WhatsApp en sus servidores. El enlace puede incluir un mensaje corto prellenado; puedes cambiarlo antes de enviar. Uso los mensajes de WhatsApp solo para responder y, si acordamos un servicio, para ejecutarlo. No los vendo.",
         ],
       },
       {
