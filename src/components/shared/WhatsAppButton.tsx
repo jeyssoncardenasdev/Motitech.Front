@@ -1,12 +1,17 @@
+import { useLocation } from "react-router-dom";
 import { useI18n } from "../../i18n/LanguageProvider";
 import whatsappIcon from "../../assets/images/icons/whatsapp.svg";
 
 const WHATSAPP_NUMBER = "573057403814";
 
 export default function WhatsAppButton() {
+  const { pathname } = useLocation();
   const { messages } = useI18n();
   const text = encodeURIComponent(messages.whatsapp.defaultMessage);
   const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${text}`;
+
+  // Only show on home page
+  if (pathname !== "/") return null;
 
   return (
     <a
