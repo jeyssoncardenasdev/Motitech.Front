@@ -8,7 +8,7 @@ const Footer = () => {
 
   return (
     <footer className="bg-footer text-faint px-6 py-6">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 md:pr-20">
         <div className="text-center md:text-left">
           <p className="text-sm text-muted">
             © {year} Jeysson Cárdenas. {messages.footer.rights}
