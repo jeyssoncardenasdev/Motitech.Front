@@ -46,7 +46,6 @@ export const es: Messages = {
     },
   },
   nav: {
-    brand: "Jeysson Cárdenas",
     home: "Inicio",
     about: "Sobre mí",
     hire: "Contratación",

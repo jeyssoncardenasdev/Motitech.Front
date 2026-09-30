@@ -70,15 +70,10 @@ export default function Navbar() {
 
   return (
     <nav ref={navRef} className="bg-surface text-ink sticky top-0 z-50 shadow-md" aria-label="Main">
-      <div className="max-w-7xl mx-auto flex items-center justify-between gap-1.5 px-3 py-3 sm:gap-3 sm:px-4 sm:py-4 lg:gap-4">
-        <Link
-          to="/"
-          className="min-w-0 shrink text-xs font-semibold leading-tight sm:text-base lg:text-2xl lg:font-bold"
-        >
-          {messages.nav.brand}
-        </Link>
+      <div className="max-w-7xl mx-auto flex items-center justify-end px-3 py-3 sm:px-4 sm:py-4 lg:grid lg:grid-cols-[1fr_auto_1fr] lg:items-center">
+        <div className="hidden lg:block" aria-hidden="true" />
 
-        <div className="hidden lg:flex items-center gap-6">
+        <div className="hidden lg:flex items-center justify-center gap-6">
           {links.map((item) => (
             <NavLink key={item.path} to={item.path} end={item.path === "/"} className={itemClass}>
               {messages.nav[item.key]}
@@ -86,7 +81,7 @@ export default function Navbar() {
           ))}
         </div>
 
-        <div className="hidden lg:flex items-center gap-3">
+        <div className="hidden lg:flex items-center justify-end gap-3">
           <ThemeSwitch
             light={theme === "light"}
             toLight={messages.nav.themeToLight}
