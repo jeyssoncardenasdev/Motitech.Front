@@ -70,8 +70,11 @@ export default function Navbar() {
 
   return (
     <nav ref={navRef} className="bg-surface text-ink sticky top-0 z-50 shadow-md" aria-label="Main">
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-4 gap-4">
-        <Link to="/" className="text-2xl shrink-0">
+      <div className="max-w-7xl mx-auto flex items-center justify-between gap-1.5 px-3 py-3 sm:gap-3 sm:px-4 sm:py-4 lg:gap-4">
+        <Link
+          to="/"
+          className="min-w-0 shrink text-xs font-semibold leading-tight sm:text-base lg:text-2xl lg:font-bold"
+        >
           {messages.nav.brand}
         </Link>
 
@@ -98,7 +101,7 @@ export default function Navbar() {
           />
         </div>
 
-        <div className="flex lg:hidden items-center gap-2">
+        <div className="flex shrink-0 lg:hidden items-center gap-1 sm:gap-2">
           <ThemeSwitch
             light={theme === "light"}
             toLight={messages.nav.themeToLight}
@@ -113,7 +116,7 @@ export default function Navbar() {
           />
           <button
             type="button"
-            className="text-2xl px-2 min-h-11 min-w-11"
+            className="text-xl px-1.5 min-h-11 min-w-11 sm:text-2xl sm:px-2"
             aria-expanded={isOpen}
             aria-controls="mobile-menu"
             aria-label={isOpen ? messages.nav.closeMenu : messages.nav.openMenu}
@@ -228,7 +231,7 @@ function LanguageSwitch({
   className: string;
 }) {
   return (
-    <div className={`${className} items-center gap-1 bg-raised p-1`} role="group" aria-label={label}>
+    <div className={`${className} items-center gap-0.5 bg-raised p-0.5 sm:gap-1 sm:p-1`} role="group" aria-label={label}>
       <LangButton active={locale === "en"} onClick={() => onChange("en")}>
         EN
       </LangButton>
@@ -253,7 +256,7 @@ function LangButton({
       type="button"
       aria-pressed={active}
       onClick={onClick}
-      className={`px-2 py-1 text-sm ${active ? "bg-brand text-brand-ink" : "text-ink"}`}
+      className={`px-1.5 py-0.5 text-xs sm:px-2 sm:py-1 sm:text-sm ${active ? "bg-brand text-brand-ink" : "text-ink"}`}
     >
       {children}
     </button>
