@@ -2,50 +2,51 @@ import type { Messages } from "./types";
 
 export const es: Messages = {
   meta: {
-    title: "Motitech | Jeysson Cárdenas — Desarrollador de software",
+    title: "Jeysson Cárdenas | Desarrollador de software",
     description:
-      "Portafolio de Jeysson Cárdenas, ingeniero de software senior. APIs, microservicios, Azure, AWS e integraciones de datos para aerolíneas, originación hipotecaria y seguros.",
+      "Jeysson Cárdenas | Desarrollador de software — Senior Software Developer e Ingeniero de IA. .NET, C#, Azure, AWS, nube, APIs, microservicios, SQL Server e IA (Cursor, Claude Code). Desarrollo dirigido por especificación para aerolíneas, crédito hipotecario y seguros.",
     pages: {
       home: {
-        title: "Motitech | Jeysson Cárdenas — Desarrollador de software",
+        title: "Jeysson Cárdenas | Desarrollador de software",
         description:
-          "Portafolio de Jeysson Cárdenas, ingeniero de software senior. APIs, microservicios, Azure, AWS e integraciones de datos para aerolíneas, originación hipotecaria y seguros.",
+          "Jeysson Cárdenas | Desarrollador de software — Senior Software Developer e Ingeniero de IA. .NET, C#, Azure, AWS, nube, APIs, microservicios, SQL Server e IA (Cursor, Claude Code). Desarrollo dirigido por especificación para aerolíneas, crédito hipotecario y seguros.",
       },
       about: {
-        title: "Sobre mí | Motitech — Jeysson Cárdenas",
+        title: "Sobre mí | Jeysson Cárdenas",
         description:
-          "Ingeniero de software senior en .NET, Azure, AWS y soporte de sistemas legado. Experiencia en aerolíneas, originación hipotecaria y seguros.",
+          "Senior Software Developer en .NET, Azure, AWS y soporte de sistemas legado. Experiencia en aerolíneas, originación hipotecaria y seguros.",
       },
       hire: {
-        title: "Contratación | Motitech — Jeysson Cárdenas",
+        title: "Contratación | Jeysson Cárdenas",
         description:
           "Trabajo freelance desde $40/hora para APIs, nube, mantenimiento de legado y backend o UI. El precio final depende del proyecto.",
       },
       works: {
-        title: "Proyectos | Motitech — Jeysson Cárdenas",
+        title: "Proyectos | Jeysson Cárdenas",
         description:
           "Trabajo seleccionado en plataformas de aerolíneas, originación de crédito hipotecario y seguros. Los nombres de clientes se mantienen en privado.",
       },
       contact: {
-        title: "Contacto | Motitech — Jeysson Cárdenas",
+        title: "Contacto | Jeysson Cárdenas",
         description:
           "Envía un resumen del proyecto. El mensaje se entrega después de aceptar la forma de trabajo y los términos.",
       },
       terms: {
-        title: "Términos | Motitech — Jeysson Cárdenas",
+        title: "Términos | Jeysson Cárdenas",
         description: "Términos de los servicios freelance de software de Jeysson Cárdenas.",
       },
       privacy: {
-        title: "Privacidad | Motitech — Jeysson Cárdenas",
+        title: "Privacidad | Jeysson Cárdenas",
         description: "Qué guarda este portafolio y cómo se entregan los mensajes de contacto.",
       },
       notFound: {
-        title: "Página no encontrada | Motitech",
-        description: "Esta dirección no forma parte del portafolio Motitech.",
+        title: "Página no encontrada | Jeysson Cárdenas",
+        description: "Esta dirección no forma parte de este portafolio.",
       },
     },
   },
   nav: {
+    brand: "Jeysson Cárdenas",
     home: "Inicio",
     about: "Sobre mí",
     hire: "Contratación",
@@ -61,9 +62,9 @@ export const es: Messages = {
   hero: {
     greeting: "Hola, bienvenido",
     name: "Soy Jeysson Cárdenas",
-    role: "Ingeniero de software senior e ingeniero de IA",
+    role: "Senior Software Developer e Ingeniero de IA",
     subtitle:
-      "Diseño APIs, microservicios e integraciones en la nube para aerolíneas, originación de crédito hipotecario y seguros. La entrega se apoya en herramientas de IA como Cursor y Claude Code, con desarrollo dirigido por especificación.",
+      "Diseño y desarrollo APIs, microservicios e integraciones en la nube para aerolíneas, originación de crédito hipotecario y seguros. Trabajo con .NET, Azure, AWS y herramientas de IA como Cursor y Claude Code, aplicando desarrollo dirigido por especificación.",
     cta: "Contáctame",
     scroll: "Ir a tecnologías",
   },
@@ -135,7 +136,7 @@ export const es: Messages = {
     eyebrow: "Método",
     title: "Cómo trabajamos",
     intro:
-      "Quien busca vibe coding y un ingeniero de IA encuentra ese apoyo aquí, con un método que se puede leer antes de empezar el proyecto.",
+      "Quien busca vibe coding y entrega con .NET, nube e IA encuentra ese apoyo aquí, con un método que se puede leer antes de empezar el proyecto.",
     steps: [
       {
         title: "Desarrollo dirigido por especificación (SDD)",
@@ -267,10 +268,10 @@ export const es: Messages = {
   },
   about: {
     name: "Jeysson Cárdenas",
-    title: "Desarrollador .NET | Ingeniero de IA",
+    title: "Senior Software Developer e Ingeniero de IA",
     paragraphs: [
       "Soy ingeniero en mecatrónica, enfocado en backend y arquitectura moderna. Llevo más de seis años construyendo sistemas confiables con .NET, C# y LINQ, con prácticas como DDD, SOLID y arquitectura onion.",
-      "Trabajo como ingeniero de software senior y tomo encargos freelance para equipos que necesitan APIs más sólidas, un paso a la nube o un sistema reorganizado en servicios con límites claros. Eso incluye APIs REST, microservicios, mensajería, CI/CD y despliegue en Azure y AWS. También hago soporte y mantenimiento de sistemas legado: las aplicaciones que ya están en producción y tienen que seguir operando.",
+      "Trabajo como Senior Software Developer y tomo encargos freelance para equipos que necesitan APIs más sólidas, un paso a la nube o un sistema reorganizado en servicios con límites claros. Eso incluye APIs REST, microservicios, mensajería, CI/CD y despliegue en Azure y AWS. También hago soporte y mantenimiento de sistemas legado: las aplicaciones que ya están en producción y tienen que seguir operando.",
       "Los dominios en los que más tiempo he pasado son aerolíneas, originación de crédito hipotecario y seguros, conectando esos productos con bases de datos y con plataformas en la nube. La entrega actual también usa ingeniería con IA: Cursor, Claude Code y desarrollo dirigido por especificación, para que el cliente vea la especificación.",
     ],
     skillsTitle: "Habilidades",
@@ -296,7 +297,7 @@ export const es: Messages = {
     updated: "Última actualización",
     strengthsTitle: "Fortalezas",
     strengths: [
-      "Ingeniero de IA",
+      ".NET, nube e IA",
       "Actitud proactiva y aprendizaje rápido",
       "Uso diario de Visual Studio y VS Code",
       "Desarrollo móvil con Xamarin.Forms",
@@ -314,7 +315,7 @@ export const es: Messages = {
     jobs: [
       {
         company: "SoftwareOne Colombia",
-        role: "Ingeniero de software senior",
+        role: "Senior Software Developer",
         date: "Ene 2024 — Actualidad",
         location: "Remoto",
         details: [
@@ -611,7 +612,7 @@ export const es: Messages = {
       {
         heading: "A quién aplica",
         paragraphs: [
-          "Este sitio lo opera Jeysson Cárdenas (Motitech). Es un portafolio. No vende productos y no crea cuentas de usuario.",
+          "Este sitio lo opera Jeysson Cárdenas. Es un portafolio. No vende productos y no crea cuentas de usuario.",
         ],
       },
       {

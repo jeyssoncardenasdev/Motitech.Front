@@ -72,7 +72,7 @@ export default function Navbar() {
     <nav ref={navRef} className="bg-surface text-ink sticky top-0 z-50 shadow-md" aria-label="Main">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-4 gap-4">
         <Link to="/" className="text-2xl shrink-0">
-          Motitech
+          {messages.nav.brand}
         </Link>
 
         <div className="hidden lg:flex items-center gap-6">

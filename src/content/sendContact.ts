@@ -53,7 +53,7 @@ export async function sendContact(input: ContactMessage): Promise<void> {
       name: input.name.trim(),
       email: input.email.trim(),
       message: input.message.trim(),
-      _subject: "Motitech — new contact",
+      _subject: "Jeysson Cárdenas — new contact",
       // Formspree discards the submission when this hidden field is filled.
       _gotcha: input.honeypot,
     }),

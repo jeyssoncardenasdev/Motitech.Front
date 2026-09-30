@@ -2,50 +2,51 @@ import type { Messages } from "./types";
 
 export const en: Messages = {
   meta: {
-    title: "Motitech | Jeysson Cárdenas — Software Developer",
+    title: "Jeysson Cárdenas | Software Developer",
     description:
-      "Portfolio of Jeysson Cárdenas, senior software engineer. APIs, microservices, Azure, AWS, and data integrations for airlines, mortgage origination, and insurance.",
+      "Jeysson Cárdenas | Software Developer — Senior Software Developer and AI Engineer. .NET, C#, Azure, AWS, cloud, APIs, microservices, SQL Server, and AI tools (Cursor, Claude Code). Spec-Driven Development for airlines, mortgage origination, and insurance.",
     pages: {
       home: {
-        title: "Motitech | Jeysson Cárdenas — Software Developer",
+        title: "Jeysson Cárdenas | Software Developer",
         description:
-          "Portfolio of Jeysson Cárdenas, senior software engineer. APIs, microservices, Azure, AWS, and data integrations for airlines, mortgage origination, and insurance.",
+          "Jeysson Cárdenas | Software Developer — Senior Software Developer and AI Engineer. .NET, C#, Azure, AWS, cloud, APIs, microservices, SQL Server, and AI tools (Cursor, Claude Code). Spec-Driven Development for airlines, mortgage origination, and insurance.",
       },
       about: {
-        title: "About | Motitech — Jeysson Cárdenas",
+        title: "About | Jeysson Cárdenas",
         description:
-          "Senior software engineer with .NET, Azure, AWS, and legacy-system support. Experience across airlines, mortgage origination, and insurance.",
+          "Senior Software Developer with .NET, Azure, AWS, and legacy-system support. Experience across airlines, mortgage origination, and insurance.",
       },
       hire: {
-        title: "Hire | Motitech — Jeysson Cárdenas",
+        title: "Hire | Jeysson Cárdenas",
         description:
           "Freelance work starting at $40/hour for APIs, cloud, legacy maintenance, and backend or UI. Final price depends on the project.",
       },
       works: {
-        title: "Projects | Motitech — Jeysson Cárdenas",
+        title: "Projects | Jeysson Cárdenas",
         description:
           "Selected work in airline platforms, mortgage loan origination, and insurance. Client names stay private.",
       },
       contact: {
-        title: "Contact | Motitech — Jeysson Cárdenas",
+        title: "Contact | Jeysson Cárdenas",
         description:
           "Send a project brief. Messages are delivered after you accept the working method and the terms.",
       },
       terms: {
-        title: "Terms | Motitech — Jeysson Cárdenas",
+        title: "Terms | Jeysson Cárdenas",
         description: "Terms for freelance software services offered by Jeysson Cárdenas.",
       },
       privacy: {
-        title: "Privacy | Motitech — Jeysson Cárdenas",
+        title: "Privacy | Jeysson Cárdenas",
         description: "What this portfolio stores and how contact messages are delivered.",
       },
       notFound: {
-        title: "Page not found | Motitech",
-        description: "This address is not part of the Motitech portfolio.",
+        title: "Page not found | Jeysson Cárdenas",
+        description: "This address is not part of this portfolio.",
       },
     },
   },
   nav: {
+    brand: "Jeysson Cárdenas",
     home: "Home",
     about: "About",
     hire: "Hire",
@@ -61,9 +62,9 @@ export const en: Messages = {
   hero: {
     greeting: "Hello, welcome",
     name: "I'm Jeysson Cárdenas",
-    role: "Senior software engineer and AI engineer",
+    role: "Senior Software Developer and AI Engineer",
     subtitle:
-      "I design APIs, microservices, and cloud integrations for airlines, mortgage origination, and insurance. Delivery is supported with AI tools such as Cursor and Claude Code, using Spec-Driven Development.",
+      "I design and build APIs, microservices, and cloud integrations for airlines, mortgage loan origination, and insurance. I work with .NET, Azure, AWS, and AI tools such as Cursor and Claude Code, using Spec-Driven Development.",
     cta: "Contact me",
     scroll: "Scroll to technologies",
   },
@@ -135,7 +136,7 @@ export const en: Messages = {
     eyebrow: "Method",
     title: "How we work",
     intro:
-      "Clients who want vibe coding and an AI engineer get that support here, with a method they can read before the project starts.",
+      "Clients who want vibe coding and delivery with .NET, cloud, and AI get that support here, with a method they can read before the project starts.",
     steps: [
       {
         title: "Spec-Driven Development (SDD)",
@@ -267,10 +268,10 @@ export const en: Messages = {
   },
   about: {
     name: "Jeysson Cárdenas",
-    title: ".NET Developer | AI engineer",
+    title: "Senior Software Developer and AI Engineer",
     paragraphs: [
       "I am a mechatronics engineer focused on backend development and modern architecture. I have more than six years building reliable systems with .NET, C#, and LINQ, using practices such as DDD, SOLID, and onion architecture.",
-      "I work as a senior software engineer and take freelance engagements for teams that need stronger APIs, a move to the cloud, or a system rebuilt around clear service boundaries. That includes REST APIs, microservices, messaging, CI/CD, and deployment on Azure and AWS. I also support and maintain legacy systems: the applications that are already in production and still have to keep running.",
+      "I work as a Senior Software Developer and take freelance engagements for teams that need stronger APIs, a move to the cloud, or a system rebuilt around clear service boundaries. That includes REST APIs, microservices, messaging, CI/CD, and deployment on Azure and AWS. I also support and maintain legacy systems: the applications that are already in production and still have to keep running.",
       "The domains where I have spent the most time are airlines, mortgage loan origination, and insurance, connecting those products to databases and to cloud platforms. Current delivery also uses AI engineering: Cursor, Claude Code, and Spec-Driven Development, so the spec stays visible to the client.",
     ],
     skillsTitle: "Skills",
@@ -296,7 +297,7 @@ export const en: Messages = {
     updated: "Last updated",
     strengthsTitle: "Strengths",
     strengths: [
-      "AI engineer",
+      ".NET, cloud, and AI",
       "Proactive attitude and fast learning",
       "Day-to-day fluency with Visual Studio and VS Code",
       "Mobile development with Xamarin.Forms",
@@ -314,7 +315,7 @@ export const en: Messages = {
     jobs: [
       {
         company: "SoftwareOne Colombia",
-        role: "Senior Software Engineer",
+        role: "Senior Software Developer",
         date: "Jan 2024 — Present",
         location: "Remote",
         details: [
@@ -605,7 +606,7 @@ export const en: Messages = {
       {
         heading: "Who this covers",
         paragraphs: [
-          "This site is operated by Jeysson Cárdenas (Motitech). It is a portfolio. It does not sell products and it does not create user accounts.",
+          "This site is operated by Jeysson Cárdenas. It is a portfolio. It does not sell products and it does not create user accounts.",
         ],
       },
       {

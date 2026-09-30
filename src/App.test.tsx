@@ -28,7 +28,7 @@ describe("Motitech", () => {
   it("opens the home page in English", () => {
     renderAt("/");
     expect(screen.getByRole("heading", { name: "I'm Jeysson Cárdenas" })).toBeInTheDocument();
-    expect(document.title).toBe("Motitech | Jeysson Cárdenas — Software Developer");
+    expect(document.title).toBe("Jeysson Cárdenas | Software Developer");
     expect(screen.getByRole("link", { name: "Projects" })).toBeInTheDocument();
     expect(document.documentElement.lang).toBe("en");
   });

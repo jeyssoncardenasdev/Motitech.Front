@@ -33,6 +33,7 @@ export interface Messages {
     };
   };
   nav: {
+    brand: string;
     home: string;
     about: string;
     hire: string;
