@@ -131,6 +131,27 @@ export const es: Messages = {
       },
     ],
   },
+  credentials: {
+    eyebrow: "Certificaciones",
+    title: "Certificación Microsoft",
+    intro: "Credencial verificable en Microsoft Learn.",
+    verifyLabel: "Verificar en línea",
+    items: [
+      {
+        id: "azure-ai-fundamentals",
+        title: "AI-901 - Microsoft Azure AI Fundamentals",
+        exam: "AI-901",
+        issuer: "Microsoft",
+        date: "10 de octubre de 2026",
+        verifyUrl:
+          "https://learn.microsoft.com/api/credentials/share/es-es/JeyssonCardenas-2944/67967DDF39508FAF?sharingId=9E14E2CF7AE8E978",
+        skills: [
+          "Identificación de conceptos y funcionalidades de inteligencia artificial",
+          "Implementación de soluciones de inteligencia artificial con Microsoft Azure",
+        ],
+      },
+    ],
+  },
   methodology: {
     eyebrow: "Método",
     title: "Cómo trabajamos",
@@ -375,6 +396,11 @@ export const es: Messages = {
     ],
     certificationsTitle: "Certificaciones",
     certifications: [
+      {
+        title: "AI-901 - Microsoft Azure AI Fundamentals",
+        institution: "Microsoft",
+        date: "10 de octubre de 2026",
+      },
       { title: "Curso de React.js", institution: "Platzi", date: "14 de agosto de 2023" },
       {
         title: "Curso de arquitecturas limpias para desarrollo de software",

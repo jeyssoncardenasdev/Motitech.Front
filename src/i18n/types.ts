@@ -59,6 +59,21 @@ export interface Messages {
     intro: string;
     items: { name: string; description: string }[];
   };
+  credentials: {
+    eyebrow: string;
+    title: string;
+    intro: string;
+    verifyLabel: string;
+    items: {
+      id: string;
+      title: string;
+      exam: string;
+      issuer: string;
+      date: string;
+      verifyUrl: string;
+      skills: string[];
+    }[];
+  };
   methodology: {
     eyebrow: string;
     title: string;

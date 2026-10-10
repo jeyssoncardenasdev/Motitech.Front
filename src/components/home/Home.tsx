@@ -1,5 +1,6 @@
 import Hero from "./sections/Hero";
 import Technologies from "./sections/Technologies";
+import Credentials from "./sections/Credentials";
 import Methodology from "./sections/Methodology";
 import Services from "./sections/Services";
 import Projects from "./sections/Projects";
@@ -11,6 +12,7 @@ const Home = () => {
     <div className="bg-canvas text-ink min-h-screen">
       <Hero />
       <Technologies />
+      <Credentials />
       <Methodology />
       <Services />
       <Projects />
