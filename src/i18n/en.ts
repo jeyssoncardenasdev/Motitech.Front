@@ -119,11 +119,11 @@ export const en: Messages = {
       },
       {
         name: "Cursor",
-        description: "AI coding environment used to implement and review changes against a spec.",
+        description: "AI agent environment for vibe engineering: fast implementation, always reviewed against the spec.",
       },
       {
         name: "Claude Code",
-        description: "AI coding assistant used to explore a codebase and draft implementation.",
+        description: "AI coding agent for exploring the codebase and drafting implementation under engineer review.",
       },
       {
         name: "SDD",
@@ -156,22 +156,22 @@ export const en: Messages = {
     eyebrow: "Method",
     title: "How we work",
     intro:
-      "Clients who want vibe coding and delivery with .NET, cloud, and AI get that support here, with a method they can read before the project starts.",
+      "This is vibe engineering, not vibe coding: AI agents write much of the code, but an experienced engineer stays responsible for what ships—on .NET, cloud, and production software. You can read the method before the project starts.",
     steps: [
       {
         title: "Spec-Driven Development (SDD)",
         description:
-          "We write the spec first: scope, behavior, and what is out of scope. That document is what we build against, and you can review it before implementation goes further.",
+          "We plan first: written scope, behavior, and architecture before agents touch the codebase. That spec is what we build against, and you can review it before implementation goes further.",
       },
       {
-        title: "AI-assisted build",
+        title: "Vibe engineering with AI agents",
         description:
-          "Implementation is supported with Cursor, Claude Code, and similar platforms. The speed of vibe coding stays. An engineer reviews the result before it is delivered.",
+          "Implementation uses Cursor, Claude Code, and similar agent platforms for speed. Unlike vibe coding—where output is accepted with little review—we review generated code, break work into small verifiable tasks, and an engineer signs off before delivery.",
       },
       {
         title: "The same engineering bar",
         description:
-          "APIs, data, tests, and cloud delivery do not change because AI is in the loop. You still get a system you can run, and a spec you can point to.",
+          "Automated tests, Git, code review, CI/CD, and documentation stay in place. AI does not replace engineering discipline; you still get APIs, data, and cloud delivery you can run, plus a spec you can point to.",
       },
     ],
   },
@@ -269,7 +269,7 @@ export const en: Messages = {
     pageIntro:
       "Write here. After both agreements, the message is delivered to my inbox. I reply with availability, a first read of the problem, and the next step.",
     methodConsent:
-      "I agree to work with AI-assisted development (vibe coding) using platforms such as Cursor and Claude Code, and with Spec-Driven Development (SDD).",
+      "I agree to work with vibe engineering: AI-assisted development with Cursor and Claude Code under Spec-Driven Development (SDD), with generated code reviewed and tested—not unchecked vibe coding.",
     termsConsentLead: "I have read and accept the",
     termsConsentLink: "terms and conditions",
     whatsappNote: "Contacting via WhatsApp also means you accept these terms.",
@@ -292,7 +292,7 @@ export const en: Messages = {
     paragraphs: [
       "I am a mechatronics engineer focused on backend development and modern architecture. I have more than six years building reliable systems with .NET, C#, and LINQ, using practices such as DDD, SOLID, and onion architecture.",
       "I work as a Senior Software Developer and take freelance engagements for teams that need stronger APIs, a move to the cloud, or a system rebuilt around clear service boundaries. That includes REST APIs, microservices, messaging, CI/CD, and deployment on Azure and AWS. I also support and maintain legacy systems: the applications that are already in production and still have to keep running.",
-      "The domains where I have spent the most time are airlines, mortgage loan origination, and insurance, connecting those products to databases and to cloud platforms. Current delivery also uses AI engineering: Cursor, Claude Code, and Spec-Driven Development, so the spec stays visible to the client.",
+      "The domains where I have spent the most time are airlines, mortgage loan origination, and insurance, connecting those products to databases and to cloud platforms. Current delivery uses vibe engineering—Cursor, Claude Code, and Spec-Driven Development—so AI speeds up the work while engineering discipline and the spec stay visible to the client.",
     ],
     skillsTitle: "Skills",
     skills: [
@@ -309,7 +309,7 @@ export const en: Messages = {
       "Kubernetes",
       "Git and GitHub",
       "Scrum",
-      "AI-assisted development",
+      "Vibe engineering",
       "Cursor and Claude Code",
       "Spec-Driven Development",
       "Legacy system support and maintenance",
@@ -459,7 +459,7 @@ export const en: Messages = {
   hire: {
     title: "Work with me",
     intro:
-      "I take scoped freelance work: APIs, integrations, cloud migration, and backend support, delivered with AI tools and Spec-Driven Development. We agree on the outcome before the build starts.",
+      "I take scoped freelance work: APIs, integrations, cloud migration, and backend support, delivered with vibe engineering—AI agents plus review, tests, and Spec-Driven Development. We agree on the outcome before the build starts.",
     offerTitle: "Engagements",
     offers: [
       {
@@ -581,9 +581,9 @@ export const en: Messages = {
         ],
       },
       {
-        heading: "AI-assisted delivery",
+        heading: "Vibe engineering and AI-assisted delivery",
         paragraphs: [
-          "The Freelancer may use AI tools such as Cursor and Claude Code, under Spec-Driven Development. The Freelancer reviews what those tools produce before delivery. The Client should not place production secrets into a chat or ticket unless the proposal says that tool is approved for that data.",
+          "The Freelancer works with vibe engineering, not vibe coding: AI tools such as Cursor and Claude Code may generate much of the implementation under Spec-Driven Development, but the Freelancer remains responsible—reviewing output, using automated tests where agreed, and not treating unchecked agent output as finished work. The Client should not place production secrets into a chat or ticket unless the proposal says that tool is approved for that data.",
         ],
       },
       {

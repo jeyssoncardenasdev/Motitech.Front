@@ -119,11 +119,11 @@ export const es: Messages = {
       },
       {
         name: "Cursor",
-        description: "Entorno de programación con IA para implementar y revisar cambios contra una especificación.",
+        description: "Entorno con agentes de IA para vibe engineering: implementación rápida, siempre revisada contra la especificación.",
       },
       {
         name: "Claude Code",
-        description: "Asistente de programación con IA para explorar un código y proponer la implementación.",
+        description: "Agente de programación con IA para explorar el código y proponer implementación bajo revisión del ingeniero.",
       },
       {
         name: "SDD",
@@ -156,22 +156,22 @@ export const es: Messages = {
     eyebrow: "Método",
     title: "Cómo trabajamos",
     intro:
-      "Quien busca vibe coding y entrega con .NET, nube e IA encuentra ese apoyo aquí, con un método que se puede leer antes de empezar el proyecto.",
+      "Aquí se trabaja con vibe engineering, no con vibe coding: los agentes de IA escriben gran parte del código, pero un ingeniero con experiencia sigue siendo responsable de lo que se entrega—en .NET, nube y software de producción. El método se puede leer antes de empezar el proyecto.",
     steps: [
       {
         title: "Desarrollo dirigido por especificación (SDD)",
         description:
-          "Primero escribimos la especificación: alcance, comportamiento y lo que queda fuera. Ese documento es contra lo que se construye, y el cliente puede revisarlo antes de seguir con la implementación.",
+          "Primero planificamos: alcance, comportamiento y arquitectura por escrito antes de que los agentes toquen el código. Ese documento es contra lo que se construye, y el cliente puede revisarlo antes de seguir con la implementación.",
       },
       {
-        title: "Construcción asistida por IA",
+        title: "Vibe engineering con agentes de IA",
         description:
-          "La implementación se apoya en Cursor, Claude Code y plataformas similares. Se conserva la velocidad del vibe coding. Un ingeniero revisa el resultado antes de entregarlo.",
+          "La implementación usa Cursor, Claude Code y plataformas similares para ganar velocidad. A diferencia del vibe coding—donde se acepta el resultado casi sin revisar—revisamos el código generado, partimos el trabajo en tareas pequeñas y verificables, y un ingeniero valida antes de entregar.",
       },
       {
         title: "El mismo estándar de ingeniería",
         description:
-          "Las APIs, los datos, las pruebas y la entrega en la nube no cambian porque haya IA en el proceso. El cliente sigue recibiendo un sistema que puede operar y una especificación a la que puede señalar.",
+          "Las pruebas automatizadas, Git, revisión de código, CI/CD y documentación siguen en pie. La IA no sustituye la disciplina de ingeniería; el cliente recibe APIs, datos y entrega en la nube operables, y una especificación a la que puede señalar.",
       },
     ],
   },
@@ -269,7 +269,7 @@ export const es: Messages = {
     pageIntro:
       "Escríbeme aquí. Tras las dos aceptaciones, el mensaje llega a mi bandeja. Respondo con disponibilidad, una primera lectura del problema y el siguiente paso.",
     methodConsent:
-      "Acepto trabajar con desarrollo asistido por IA (vibe coding) usando plataformas como Cursor y Claude Code, y con desarrollo dirigido por especificación (SDD).",
+      "Acepto trabajar con vibe engineering: desarrollo asistido por IA con Cursor y Claude Code bajo desarrollo dirigido por especificación (SDD), con revisión y pruebas del código generado—no vibe coding sin responsabilidad.",
     termsConsentLead: "He leído y acepto los",
     termsConsentLink: "términos y condiciones",
     whatsappNote: "Contactar por WhatsApp también significa que aceptas estos términos.",
@@ -292,7 +292,7 @@ export const es: Messages = {
     paragraphs: [
       "Soy ingeniero en mecatrónica, enfocado en backend y arquitectura moderna. Llevo más de seis años construyendo sistemas confiables con .NET, C# y LINQ, con prácticas como DDD, SOLID y arquitectura onion.",
       "Trabajo como Senior Software Developer y tomo encargos freelance para equipos que necesitan APIs más sólidas, un paso a la nube o un sistema reorganizado en servicios con límites claros. Eso incluye APIs REST, microservicios, mensajería, CI/CD y despliegue en Azure y AWS. También hago soporte y mantenimiento de sistemas legado: las aplicaciones que ya están en producción y tienen que seguir operando.",
-      "Los dominios en los que más tiempo he pasado son aerolíneas, originación de crédito hipotecario y seguros, conectando esos productos con bases de datos y con plataformas en la nube. La entrega actual también usa ingeniería con IA: Cursor, Claude Code y desarrollo dirigido por especificación, para que el cliente vea la especificación.",
+      "Los dominios en los que más tiempo he pasado son aerolíneas, originación de crédito hipotecario y seguros, conectando esos productos con bases de datos y con plataformas en la nube. La entrega actual usa vibe engineering—Cursor, Claude Code y desarrollo dirigido por especificación—para acelerar con IA sin renunciar a la disciplina de ingeniería ni a una especificación visible para el cliente.",
     ],
     skillsTitle: "Habilidades",
     skills: [
@@ -309,7 +309,7 @@ export const es: Messages = {
       "Kubernetes",
       "Git y GitHub",
       "Scrum",
-      "Desarrollo asistido por IA",
+      "Vibe engineering",
       "Cursor y Claude Code",
       "Desarrollo dirigido por especificación",
       "Soporte y mantenimiento de sistemas legado",
@@ -463,7 +463,7 @@ export const es: Messages = {
   hire: {
     title: "Trabaja conmigo",
     intro:
-      "Tomo trabajo freelance con alcance definido: APIs, integraciones, migración a la nube y soporte de backend, entregado con herramientas de IA y desarrollo dirigido por especificación. Acordamos el resultado antes de empezar a construir.",
+      "Tomo trabajo freelance con alcance definido: APIs, integraciones, migración a la nube y soporte de backend, entregado con vibe engineering—agentes de IA más revisión, pruebas y desarrollo dirigido por especificación. Acordamos el resultado antes de empezar a construir.",
     offerTitle: "Encargos",
     offers: [
       {
@@ -587,9 +587,9 @@ export const es: Messages = {
         ],
       },
       {
-        heading: "Entrega asistida por IA",
+        heading: "Vibe engineering y entrega asistida por IA",
         paragraphs: [
-          "El Freelancer puede usar herramientas de IA como Cursor y Claude Code, con desarrollo dirigido por especificación. El Freelancer revisa lo que esas herramientas producen antes de entregar. El Cliente no debe poner secretos de producción en un chat o un ticket, salvo que la propuesta diga que esa herramienta está aprobada para esos datos.",
+          "El Freelancer trabaja con vibe engineering, no con vibe coding: herramientas de IA como Cursor y Claude Code pueden generar gran parte de la implementación bajo desarrollo dirigido por especificación, pero el Freelancer sigue siendo responsable—revisando el resultado, usando pruebas automatizadas cuando se acuerde y sin tratar la salida del agente sin revisar como trabajo terminado. El Cliente no debe poner secretos de producción en un chat o un ticket, salvo que la propuesta diga que esa herramienta está aprobada para esos datos.",
         ],
       },
       {
