@@ -19,8 +19,8 @@ const AboutMe = () => {
           <img
             src={portrait}
             alt={about.name}
-            width={1024}
-            height={1021}
+            width={819}
+            height={1024}
             className="mx-auto mb-6 aspect-square w-full max-w-xs object-cover object-top"
           />
           <p className="text-muted">{about.title}</p>
